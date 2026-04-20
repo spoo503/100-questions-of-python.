@@ -1,10 +1,44 @@
 1.Find the second largest number in a list.
-Find the second smallest number in a list.
-Merge two lists without duplicates.
-Find common elements in two lists.
-Rotate a list left by one position.
-Rotate a list right by one position.
-Find frequency of each element in a list.
+num=[1,2,3,4,5,6,7,4,56,7,6,8,9]
+num=list(set(num))
+num.sort()
+print(num[-2])
+
+2.Find the second smallest number in a list.
+num=[1,2,3,4,5,6,7,4,56,7,6,8,9]
+num=list(set(num))
+num1=num.sort(reverse=True)
+print(num1[-2])
+
+3.Merge two lists without duplicates.
+num1=[1,2,4,5,1,2,3,5]
+num2=[1,2,4,6,1,2,3,5]
+num1=list(set(num1))
+num2=list(set(num2))
+print(list(set(num1+num2)))
+
+4.Find common elements in two lists.
+num1=[1,2,4,5,1,2,3,5]
+num2=[1,2,4,6,1,2,3,5]
+num1=list(set(num1))
+num2=list(set(num2))
+print(list(set(num1) & set(num2)))
+
+5.Rotate a list left by one position.
+num=[1,2,3,4,5,6,7]
+r=num.pop(0)
+num.append(r)
+print(num)
+b.nums = [1,2,3,4,5]
+first = nums[0]              # store first element
+for i in range(len(nums)-1):
+    nums[i] = nums[i+1]      # shift elements left
+nums[len(nums)-1] = first    # place first element at the end
+print(nums)
+
+6.Rotate a list right by one position.
+
+7.Find frequency of each element in a list.
 Find character frequency in a string.
 Remove spaces from a string.
 Count uppercase and lowercase letters.
@@ -16,10 +50,109 @@ Check whether a number is Armstrong.
 Find GCD of two numbers.
 Find LCM of two numbers.
 Check whether two strings are anagrams.
-Create a dictionary from two lists (keys and values).
-Sort a list without using sort().
-Find duplicate elements in a list.
-Count digits, letters, and special characters in a string.
-Create a function to check prime numbers.
-Write a function to calculate factorial using recursion.
-Create a simple calculator using functions
+
+19.Create a dictionary from two lists (keys and values).
+a.list1=["name","age","class"]
+list2=["sri","19","MBBS"]
+details=dict(zip(list1,list2))   # zip automatically converts the lists into key and value pairs
+print(details)
+b.list1=["name","age","class"]
+list2=["sri","19","MBBS"]
+details={}
+for i in range(len(list1)):
+    details[list1[i]] = list2[i]
+print(details)
+
+20.Sort a list without using sort().
+num=[1,2,3,4,5,6,7,8]
+for i in range(len(num)):
+    for j in range(len(num)-1):
+        if num[j]>num[j+1]:
+            temp= num[i]
+            num[i]=num[j]
+            num[j]=temp
+        print(num)
+
+21.Find duplicate elements in a list.
+num=[1,2,3,4,2,6,1,8]
+for i in range(len(num)):
+    for j in range(len(num)-1):
+        if num[i]==num[j]:
+            print(num[j])
+            break
+
+22.Count digits, letters, and special characters in a string.
+a=[1,2,3,4,"spoo","sri","*","+"]
+digits=[]
+letters=[]
+special=[]
+for i in a:
+    if type(i)==int:
+        digits.append(i)
+    elif type(i)==str and i.isalpha():
+        letters.append(i)
+    else:
+        special.append(i)
+print("Digits",digits)
+print("letters",letters)
+print("Special characters",special)
+
+23.Create a function to check prime numbers.
+def check_prime(num):
+    if(num<=1):
+        print("IT IS NOT PRIME NUMBER")
+        return
+    for i in range(2,num):
+        if(num%i==0):
+           print(" not PRime number")
+           return
+       print("Prime number")
+num=int(input("ENter the number"))
+check_prime(num)
+
+24.Write a function to calculate factorial using recursion.
+
+
+25.Create a simple calculator using functions
+class simple_calculaator:
+    def __init__(self,a,b):
+        self.a =a
+        self.b =b
+    def Addition(self):
+        print(sum(self.a+self.b))
+    def Subtraction(self):
+        print(self.a-self.b)
+    def Multiplication(self):
+        print(self.a*self.b)
+    def Division(self):
+       if (self.b!=0):
+           print(self.a/self.b)
+while True:
+    print("1.ADDITION")
+    print("2.SUBTRACTION")
+    print("3.MULTIPLICATION")
+    print("4.DIVISION")
+    print("5.Exit")
+    choice=int(input("Enter the choice"))
+    if (choice==5):
+    print("Simple calculator is sucessfully executed")
+    break
+    a=int(input("ENter the first number"))
+    b=int(input("ENter the second number"))
+    obj=simple_calculator(a,b)
+    if choice==1:
+        obj.Addition()
+    elif choice==2:
+        obj.Subtraction()
+    elif choice==3:
+        obj.Multiplication()
+    elif choice==4:
+        obj.Division()
+else:
+    print("INvalid choice")
+
+
+
+    
+    
+        
