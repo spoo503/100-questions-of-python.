@@ -1,6 +1,24 @@
-Implement Bubble Sort.
-Implement Selection Sort.
-Implement Insertion Sort.
+1.Implement Bubble Sort\.
+num=[1,25,46,23,5,6,77,8]
+for i in range(num):
+    for j in range(0,n-i-1):
+        if num[j]>num[j+1]:
+             temp = num[j]
+             num[j]=num[j+1]
+             num[j+1]=temp
+print(num)
+        
+2.Implement Selection Sort. 
+num=[1,25,46,23,5,6,77,8]
+for i in range(len(num)):
+    mini=i
+    for j in range(i+1,len(num)):
+        if num[j]<num[mini]:
+          mini=j
+          num[i],num[mini]=num[mini],num[i]
+print(num)
+
+3.Implement Insertion Sort.
 Find intersection of two lists without using set.
 Move all zeros in list to the end.
 Find missing number in list 1–N.
