@@ -37,19 +37,124 @@ nums[len(nums)-1] = first    # place first element at the end
 print(nums)
 
 6.Rotate a list right by one position.
+num=[1,2,3,4,5,6,7]
+last=num[-1]
+for i in range (len(num)-1):
+    num[i]=num[i-1]
+ num[0]=last
+print(num)
+b.num=[1,2,3,4,5,6]
+num=[[num[-1]+num[:-1]]
+print(num)
 
 7.Find frequency of each element in a list.
-Find character frequency in a string.
-Remove spaces from a string.
-Count uppercase and lowercase letters.
-Print star pattern triangle.
-Print reverse star pattern.
-Find sum of digits of a number.
-Reverse digits of a number.
-Check whether a number is Armstrong.
-Find GCD of two numbers.
-Find LCM of two numbers.
-Check whether two strings are anagrams.
+num=[1,2,3,4,5,1,2,3]
+count=0
+for i in range(len(num)):
+    for j in range (i+1,len(num)):
+        if num[i]==num[j:
+              count+=1
+print(count)
+
+
+8.Find character frequency in a string.
+num=["a","a"]
+count=0
+for i in range(len(num)):
+    for j in range (i+1,len(num)):
+        if num[i]==num[j]:
+              count+=1
+print(count)
+
+
+9.Remove spaces from a string.
+str=input("Enter the string")
+str=str.replace("  ","")
+print(str)
+
+
+10.Count uppercase and lowercase letters.
+s=input("Enter the string")
+upper=0
+lower=0
+for ch in s:
+    if ch.isupper():
+        upper+=1
+    elif ch.islower():
+        lower+=1
+print("UPPERCASE",upper)
+print("LOWERCASE",lower)
+
+
+11.Print star pattern triangle.
+n=5
+for i in range(1,n+1):
+        print(" "*(n-i),end="")
+        print("* " * i)
+
+
+12.Print reverse star pattern.
+n=5
+for i in range(n,0,-1):
+        print(" "*(n-i),end="")
+        print("* " * i)
+
+
+13.Find sum of digits of a number.
+str=input("ENter the number")
+count=len(str)
+print("Number of digits",count)
+
+
+14.Reverse digits of a number.
+n=int(input("Emtet jrt ni,b"))
+rev=0
+while n!=0:
+    rem=n%10
+    rev=rev*10+rem
+    n=n/10
+print(n)
+
+
+15.Check whether a number is Armstrong.
+n=int(input("Enter the number"))
+temp=n
+power=len(str(num))
+sum=0
+while temp>0:
+    digit=temp%10
+    sum+=digit**power
+    temp//=10
+if sum==num:
+    print("Armstrong number")
+else:
+    print("NOt a amstrong")
+    
+
+16.Find GCD of two numbers.
+a=int(inpu("Enter the number"))
+b=int(inpu("Enter the number"))
+while b!=0:
+    a,b=b,a%b
+print(a)
+
+
+17.Find LCM of two numbers.
+import math
+a=int(inpu("Enter the number"))
+b=int(inpu("Enter the number"))
+LCM=(a*b)//math.gcd(a,b)
+print(LCM)
+
+
+18.Check whether two strings are anagrams.
+str_1=input("Enter the string")
+str_2=input("Enter the second string")
+if sorted(str_1)==sorted(str_2):
+    print("Anagram")
+else:
+    print("not Anagram")
+
 
 19.Create a dictionary from two lists (keys and values).
 a.list1=["name","age","class"]
@@ -72,6 +177,7 @@ for i in range(len(num)):
             num[i]=num[j]
             num[j]=temp
         print(num)
+
 
 21.Find duplicate elements in a list.
 num=[1,2,3,4,2,6,1,8]
@@ -111,6 +217,16 @@ num=int(input("ENter the number"))
 check_prime(num)
 
 24.Write a function to calculate factorial using recursion.
+n=int(input("Enter the number"))
+fact=1
+if n==0 or n==1:
+    print("Factorial of the number is 1")
+elif n<0:
+    print("Factorial cannnot be calculated")
+else:
+     for i in range(n):
+         fact=fact*i
+print(fact)
 
 
 25.Create a simple calculator using functions
