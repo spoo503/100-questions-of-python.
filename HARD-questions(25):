@@ -27,8 +27,80 @@ Find first non-repeating character in string.
 Find most frequent element in list.
 Find pairs in list whose sum equals target.
 Create a Student class with name, marks, grade.
+class Student:
+    def __init__(self,name,mark_1,mark_2,mark_3):
+        self.name=name
+        self.mark_1=mark_1
+        self.mark_2=mark_2
+        self.mark_3=mark_3
+    def Total_marks(self):
+        total=self.mark_1+self.mark_2+self.mark_3
+        marks={"SUB1":self.mark_1,
+                "SUB2":self.mark_2,
+                "SUB3":self.mark_3
+              }
+        print("Student name",self.name)
+        print("Marks",marks)
+        print("Total Marks",total)
+        self.grade(total)
+    def grade(self,total):
+        if total>=90:
+            print("Grade A")
+        elif total>=80:
+            print("Grade B")
+        elif total>70:
+            print("Grade C")
+        elif total>50:
+            print("PASS")
+        elif total<50:
+            print("FAIL")
+while True:
+name=input("Enter the name of the student")
+mark_1=int(input("Enter the marks of 1"))
+mark_2=int(input("Enter the marks of 2"))
+mark_3=int(input("Enter the marks of 3"))
+s=Student(name,mark_1,mark_2,mark_3)
+s.Total_marks()
+ch=input("Do u want to continue")
+if ch==no:
+    break
 Implement inheritance with Employee → Manager.
+
 Create a Bank Account class with deposit and withdraw.
+class Bank:
+    def __init__(self,name,account_no,branch,balance):
+        self.name=name
+        self.account_no=account_no
+        self.branch=branch
+        self.balance=balance
+class Deposit(Bank):
+    def deposit(self,amount):
+        self.balance += amount
+        print("Amount Deposited:",amount)
+        print("Total Balance:",self.balance)
+class Withdraw(Bank):
+     def withdraw(self,amount):
+        if self.balance > amount:
+            self.balance -= amount
+            print("Amount Withdrawn:",amount)
+            print("Remaining Balance:",self.balance)
+        else:
+            print("Insufficient Balance")
+name=input("Enter account holder name: ")
+account_no=int(input("Enter account number: "))
+branch=input("Enter branch name: ")
+balance=int(input("Enter current balance: "))
+d=Deposit(name,account_no,branch,balance)
+w=Withdraw(name,account_no,branch,balance)
+print("1.Deposit")
+print("2.Withdraw")
+choice=int(input("Enter choice: "))
+if choice==1:
+    amount=int(input("Enter amount to deposit: "))
+    d.deposit(amount)
+elif choice==2:
+    amount=int(input("Enter amount to withdraw: "))
+    w.withdraw(amount)
 Read a file and count number of lines.
 Count number of words in a file.
 Find longest palindrome substring.
