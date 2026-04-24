@@ -1,4 +1,4 @@
-1.Implement Bubble Sort\.
+a1.Implement Bubble Sort\.
 num=[1,25,46,23,5,6,77,8]
 for i in range(num):
     for j in range(0,n-i-1):
