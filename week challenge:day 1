@@ -145,19 +145,25 @@ print(min)
 
 Q21
 Take a 3-digit number and print sum of digits.
-n=input("ENter the number")
-for i in n:
-   print("sum of digits"n++)
+n = input("Enter the number: ")
 
+total = 0
+
+for i in n:
+    total = total + int(i)
+
+print("Sum of digits =", total)
 Q22
 Take a 4-digit number and print reverse
-n=int(input("Enter the number"))
-rev=0
-for i in n:
-    rem=n%10
-    rev=rev*10+rem
-    n=n/10
-    print(n)
+n = int(input("Enter the number: "))
+rev = 0
+
+while n > 0:
+    rem = n % 10
+    rev = rev * 10 + rem
+    n = n // 10
+
+print("Reverse =", rev)
 
 Q23
 Take rupees and convert to paise.
