@@ -1,0 +1,142 @@
+Part A — Loop Basics (1–6)
+Q1
+Print numbers from 1 to 100.
+for i in range(1,101):
+    print(i)
+
+Q2
+Print numbers from 100 to 1.
+
+Q3
+Print even numbers from 1 to 100.
+
+for i in range(0,101,2):
+    print(i)
+Q4
+Print odd numbers from 1 to 100.
+
+for i in range(1,101,2):
+    print(i)
+Q5
+Print multiplication table of a given number.
+Example:
+Enter number: 55 x 1 = 55 x 2 = 10...5 x 10 = 50
+n=int(input())
+for i in range(1,11):
+    print(f"{n}{i}={n*i}")
+
+Q6
+Find sum of numbers from 1 to n.
+Example:
+5 → 15
+(1+2+3+4+5)
+n=int(input())
+for i in range(n,n+1):
+    i+=1
+    print(i)
+
+
+Part B — Number Logic (7–13)
+Q7
+Count digits in a number.
+Example:
+12345 → 5
+
+Q8
+Sum of digits.
+Example:
+123 → 6
+
+Q9
+Reverse a number.
+Example:
+1234 → 4321
+
+Q10
+Palindrome number check.
+Example:
+121 → Palindrome123 → Not palindrome
+
+Q11
+Find factorial.
+Example:
+5 → 120
+n!=n(n−1)(n−2)⋯1n!=n(n-1)(n-2)\cdots 1n!=n(n−1)(n−2)⋯1
+
+Q12
+Check prime number.
+
+Q13
+Print all prime numbers between 1 and n.
+
+Part C — Medium Logic (14–19)
+Q14
+Print Fibonacci series up to n terms.
+Example:
+0 1 1 2 3 5 8 ...
+
+Q15
+Find GCD of 2 numbers.
+
+Q16
+Find LCM of 2 numbers.
+
+Q17
+Check Armstrong number.
+Example:
+1531³ + 5³ + 3³ = 153
+
+Q18
+Check Strong number.
+Example:
+1451! + 4! + 5! = 145
+
+Q19
+Count even and odd digits in number.
+Example:
+12345Even digits = 2Odd digits = 3
+
+Part D — Patterns (20–23)
+Q20
+Print:
+***************
+
+Q21
+Print:
+112123123412345
+
+Q22
+Print:
+***************
+
+Q23
+Print:
+    *   ***  ***** ****************
+(pyramid)
+
+Part E — Tough (24–25)
+Q24
+Check perfect number.
+Example:
+6 = 1+2+3Perfect number
+
+Q25
+Guessing game:
+
+
+program stores secret number
+
+
+user keeps guessing
+
+
+if correct → win
+
+
+else continue
+
+
+(use while + break)
+
+Finish these, and your loops will become much stronger.
+Day 4 = Strings (25 questions) 🔥
