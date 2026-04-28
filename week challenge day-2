@@ -422,7 +422,7 @@ Example:
 Feb → 28/29
 Apr → 30
 Jan → 31
-Q25 (Challenge)
+ (Challenge)
 month = int(input("Enter month number: "))
 
 if month == 2:
@@ -437,6 +437,7 @@ elif month in [1, 3, 5, 7, 8, 10, 12]:
 else:
     print("Invalid month")
 
+Q25
 Build simple menu program:
 
 1.Add
@@ -446,3 +447,56 @@ Build simple menu program:
 Choose option:
 
 Then perform operation.
+class Calculator:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add(self):
+        print("Sum =", self.a + self.b)
+
+    def sub(self):
+        print("Difference =", self.a - self.b)
+
+    def multi(self):
+        print("Multiplication =", self.a * self.b)
+
+    def divi(self):
+        print("Division =", self.a / self.b)
+
+    def mod(self):
+        print("Modulus =", self.a % self.b)
+
+
+while True:
+    a = int(input("Enter value of a: "))
+    b = int(input("Enter value of b: "))
+
+    c = Calculator(a, b)
+
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+    print("5.Modulus")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        c.add()
+    elif choice == 2:
+        c.sub()
+    elif choice == 3:
+        c.multi()
+    elif choice == 4:
+        c.divi()
+    elif choice == 5:
+        c.mod()
+    else:
+        print("Invalid choice")
+
+    ch = input("Do you want to continue? (yes/no): ")
+
+    if ch.lower() == "no":
+        break
+   
