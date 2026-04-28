@@ -1,0 +1,189 @@
+Take your name as input and print:
+name=input("ENter the name")
+print(f"Hello, {name} ! welcome to python")
+
+Take name and age input. Print:
+name=("ENter the name of the student")
+age=int(input("Enter the age of the student"))
+print(f"My name is{name} and I am{age} years old.")
+
+
+Take city name input and print:
+city=input("Enter the city name")
+print(f" I live in {city}")
+
+
+Take favorite programming language input and print:
+prgm=input("ENter the favorite programme")
+print(f"My favorite programming language is{prgm}")
+
+Take college name input and print:
+clg=input("ENter the college name")
+print(f"i study at{clg}")
+
+Part B — Numbers + Arithmetic (6–10)
+Q6
+Take two numbers and print:
+a=int(input("Enter the numbers"))
+b=int((input"ENte the number"))
+print("sum of a and b is",a+b)
+print("sub",a-b)
+print("multi",a*b)
+print("mod",a%b)
+
+
+Q7
+Take 3 numbers and print their total sum.
+a=int(input("Enter the numbers"))
+b=int((input"ENte the number"))
+c=int(input("ENter the number "))
+print("sum of a and b is",a+b+c)
+
+
+Q8
+Take 3 numbers and print average.
+a=int(input("Enter the numbers"))
+b=int((input"ENte the number"))
+c=int(input("ENter the number "))
+print("avg of a and band c is",a+b+c/3)
+
+​
+ 
+
+Q9
+Take length and breadth, print area of rectangle.
+l=int(input("Enter the numbers"))
+b=int((input"ENte the number"))
+print(f"Area of the rectangle{l*b}")
+
+Q10
+Take radius and print area of circle.
+r=int(input("Enter the radius of the circle"))
+print("Area of the circle",3.14*r*r)
+
+Part C — Type Conversion (11–15)
+Q11
+Take age as input and convert it to integer, then print next year's age.
+age=input("ENter the age")
+age=int(age)
+print(age)
+Q12
+Take price as float and convert it to integer.
+price=float(input("ENter the price"))
+price=int(price)
+print(price)
+
+
+Q13
+Take number as string input and convert to float.
+num=input("Enter the number")
+num=float(num)
+print(num)
+
+Q14
+Take two numbers as strings and add them after conversion.
+a=input()
+b=input()
+print("Sum" int(a)+int(b))
+
+
+Q15
+Check type of:
+a=10
+b=12.2
+c="ejje"
+d=True
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+
+
+
+Part D — Logic Practice (16–20)
+Q16
+Swap two numbers using third variable.
+a=int(input())
+b=int(input())
+a=temp
+a=b
+b=temp
+print(a,b)
+
+Q17
+Swap two numbers without third variable.
+a=int(input())
+b=int(input())
+a=a+b
+b=a-b
+a=a-b
+print(a,b)
+
+Q18
+Take temperature in Celsius and convert to Fahrenheit.
+c=int(input("Enter the temperature"))
+F=9/5*c+32
+print("Temperature on farenhite",F)
+
+Q19
+Take principal, rate, time → calculate simple interest.
+p=float(input("ENter the principle amount"))
+t=float(input("ENter the rate amount"))
+r=float(input("ENter the time amount"))
+SI=p*t*r/100
+print("SI",SI)
+
+ 
+
+Q20
+Take seconds input and convert into:
+sec=int(input("Enter the seconds"))
+hours=sec*60*60
+min=sec*60
+print(hours)
+print(min)
+
+Q21
+Take a 3-digit number and print sum of digits.
+n=input("ENter the number")
+for i in n:
+   print("sum of digits"n++)
+
+Q22
+Take a 4-digit number and print reverse
+n=int(input("Enter the number"))
+rev=0
+for i in n:
+    rem=n%10
+    rev=rev*10+rem
+    n=n/10
+    print(n)
+
+Q23
+Take rupees and convert to paise.
+rupees=int(input())
+print("converting ",rupees*100)
+
+
+Q24
+Take marks of 5 subjects and print:
+mark1=int(input())
+mark2=int(input())
+mark3=int(input())
+mark4=int(input())
+mark5=int(input())
+print("TOtal",mark1+mark2+mark3+mark4+mark5)
+print("AVERAge" ,mark1+mark2+mark3+mark4+mark5/5)
+
+
+
+Q25 (Challenge)
+Take days input and convert into:
+days=int(input())
+years=days*365
+
+months=days*30
+print("YEARS",years)
+print("DAYS",days)
+
+
