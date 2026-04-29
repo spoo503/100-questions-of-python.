@@ -1,0 +1,254 @@
+Part A — Easy
+
+Q1. Create a function to add two numbers.
+Example: 2 + 3 = 5
+def Add(a,b):
+    sum=a+b
+    print(sum)
+Add(2,3)
+
+Q2. Create a function to check even/odd.
+def Add(n):
+    if n%2==0:
+        print("Even")
+    else:
+        print("ODD")
+Add(4)
+
+Q3. Create a function to find square of a number.
+def square(n):
+    sq=n*n
+    print(sq)
+square(5)
+
+Q4. Find length of a string without using len().
+n=input("Enter the string")
+len=0
+for i in n:
+    len+=1
+    print(len)
+print("length of the string is",len)
+
+Q5. Count vowels in a string.nu
+n=input()
+count=0
+for i in n:
+    if n in "aeiouAEIOU":
+        count+=1
+    print(count)
+
+
+Q6. Count consonants in a string.
+n=input()
+count=0
+for i in n:
+    if n not in "aeiouAEIOU":
+        count+=1
+    print(count)
+
+Part B — Medium
+
+Q7. Reverse a string.
+Example: hello → olleh
+s=input("Enter the string")
+print(s[::-1])
+
+
+Q8. Check string palindrome.
+Example: madam → palindrome
+s=input("Enter the string")
+print(s[::-1])
+if s==s[::-1]:
+   print("Palindrome")
+else:
+   print("NOT A PALINDROME")
+
+
+Q9. Count words in a sentence.
+Example: "I love python" → 3
+s = input("Enter sentence: ")
+count = 1
+
+for i in s:
+    if i == " ":
+        count += 1
+
+print(count)
+
+Q10. Remove spaces from a string.
+s = input("Enter sentence: ")
+print(s.replace(" ", ""))
+
+Q11. Convert lowercase to uppercase without using .upper()
+s = input("Enter string: ")
+new = ""
+
+for i in s:
+    if 'a' <= i <= 'z':
+        new += chr(ord(i) - 32)
+    else:
+        new += i
+
+print(new)
+
+Q12. Find frequency of each character.
+Example: apple
+
+a = 1
+p = 2
+l = 1
+e = 1
+s = input("Enter string: ")
+
+for i in s:
+    count = 0
+
+    for j in s:
+        if i == j:
+            count += 1
+
+    print(i, "=", count)
+Part C — Lists
+
+Q13. Find largest number in list.
+l=[1,2,3,4,4,5,6,467,5]
+print(max(l))
+
+Q14. Find smallest number in list.
+l=[1,2,3,4,4,5,6,467,5]
+print(min(l))
+
+Q15. Find second largest number.
+l=[1,2,3,4,4,5,6,467,5]
+l.sort()
+print(l[-2])
+
+
+Q16. Count even and odd numbers in list.
+l=[1,2,4]
+for i in range(len(l)):
+    if l[i]%2==0:
+        print("Even")
+    else:
+        print("odd")
+
+
+Q17. Sum all elements in list.
+l=[1,2,2]
+sum=0
+for i in l:
+    sum+=i
+print(sum)
+    
+Q18. Remove duplicates from list.
+l=[1,2,2,1,34]
+l=list(set(l))
+print(l)
+Part D — Tough
+
+Q19. Linear search in list.
+
+Q20. Find common elements in two lists.
+s1={1,2,34,2,1}
+s2={1,34,53,2,23}
+print(s1|s2)
+
+Q21. Sort list without using sort().
+l = [5, 2, 8, 1, 3]
+
+for i in range(len(l)):
+    for j in range(i+1, len(l)):
+        if l[i] > l[j]:
+            l[i], l[j] = l[j], l[i]
+
+print(l)
+
+Q22. Merge two lists.
+l1=[1,2,4,35,34]
+l2=[23,43,5,64,5]
+print(l1+l2)
+
+Q23. Find missing number in list.
+Example:
+
+[1,2,3,5] → missing = 4
+Part E — Mini Programsl = [1, 2, 3, 5]
+
+for i in range(1, l[-1] + 1):
+    if i not in l:
+        print("Missing =", i)
+
+Q24. ATM menu using functions:
+
+Deposit
+Withdraw
+Check balance
+class Bank:
+    def __init__(self,balance):
+        self.balance=balance
+    def deposite(self):
+        amount=int(input())
+        self.balance+=amount
+        print("DEPOSITE",balance)
+    def withdraw(self):
+        amount=int(input())
+        if balance<amount:
+            print("Insufficient balance")
+        else:
+            balance-=amount
+    def check_balance(self):
+        print("BALANCE",balance)
+acc=Bank(1000)
+while True:
+    opt=int(input())
+    print("DEPOSITE")
+    print("WIHDRAW")
+    print("CHECK_BALANCE")
+    print("EXIT")
+    if opt==1:
+       acc.deposite()
+    elif opt==2:
+         acc.wthdraw()
+    elif opt==3:
+        acc.check_balance()
+    elif opt==4:
+        break
+
+Q25. Calculator using functions:
+
+Add
+Subtract
+Multiply
+Divideclass Calculator:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def add(self):
+        print("ADD",self.a+self.b)
+    def Sub(self):
+       print("SUB",self.a-self.b)
+    def multi(self):
+        print("MULTI",self.a*self.b)
+    def divi(self):
+        if self.b!=0:
+             print("Div",self.a/self.b)
+        else:
+            print("cannot be calculated")
+c=Calculator(a,b)
+while True:
+    opt=int(input())
+    print("ADD")
+    print("SUB")
+    print("MULTI")
+    print("DIVI")
+    print("EXIT")
+    if opt==1:
+       c.add()
+    elif opt==2:
+         c.Sub()
+    elif opt==3:
+       c.multi()
+    elif opt==4:
+       c.divi()
+    elif opt==5:
+        break
