@@ -32,7 +32,9 @@ print(dict)
 
 Q5. Loop through dictionary:
 Print:
-name = Bhoomiage = 18marks = 95
+name = Bhoomi
+age = 18 
+marks = 95
 
 Part B — Dictionary (Medium)
 Q6. Count frequency of characters using dictionary.
@@ -95,42 +97,125 @@ Q20. Method overriding example.
 Q21. Constructor inheritance using super().
 
 Tough
+
 Q22. Bank Account class:
-
-
 deposit
-
-
 withdraw
-
-
 balance
+class Bank:
+    def __init__(self,balance):
+        self.balance=balance
+class deposite(Bank):
+    def __init__(self,balance,amount):
+        super().__init__(balance)
+        self.balance+=amount
+        print("Deposited amount",self.balance)
+class withdraw(Bank):
+     def __init__(self,balance,amount):
+         super().__init__(balance)
+         self.balance-=amount
+         print("Withdraw amount",self.balance)
+class check_balance(Bank):
+        def __init__(self,balance):
+            super().__init__(balance)
+            print("Balance amount",self.balance)
+balance=1000
+while True:
+    print("1.DEPOSITE")
+    print("2.WITHDRAW")
+    print("CHECKBALANCE")
+    print("Exit")
+    c=int(input())
+    if c==1:
+         amount=int(input())
+         b=Bank(balance)
+         d=deposite(balance,amount)
+         balance=d.balance
+    elif c==2:
+         amount=int(input())
+         b=Bank(balance)
+         w=withdraw(balance,amount)
+         balance=w.balance
+    elif c==3:
+         b=Bank(balance)
+         c=check_balance(balance)
+    elif c==4:
+       break
+    else:
+        print("Invalid choice")
 
+    
 
 
 Q23. Library Management:
-
-
 add book
-
-
 remove book
-
-
 show books
+class Library:
+    def __init__(self):
+        self.books=[]
+
+    def add(self,book):
+        self.books.append(book)
+        print("Book added")
+
+    def remove(self,book):
+        if book in self.books:
+            self.books.remove(book)
+            print("Book removed")
+        else:
+            print("Book not found")
+
+    def show(self):
+        if len(self.books)==0:
+            print("Library is empty")
+        else:
+            print("Books in library:")
+            for i in self.books:
+                print(i)
+
+
+l=Library()
+
+while True:
+    print("1.ADD")
+    print("2.REMOVE")
+    print("3.SHOW")
+    print("4.EXIT")
+
+    c=int(input())
+
+    if c==1:
+        book=input("Enter book name: ")
+        l.add(book)
+
+    elif c==2:
+        book=input("Enter book name: ")
+        l.remove(book)
+
+    elif c==3:
+        l.show()
+
+    elif c==4:
+        break
+
+    else:
+        print("Invalid choice")
 
 
 
 Q24. Login system:
-
-
 username/password dictionary
-
-
 check login
+n=int(input())
+for i in range(n):
+username=int(input())
+
+
 
 
 
 Q25. Mini project:
 Student Result Management System.
 Start Q1 and send code.
+
