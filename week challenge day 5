@@ -1,0 +1,145 @@
+Part A — Dictionary (Easy)
+Q1. Create a dictionary of student details:
+
+
+name
+
+
+age
+
+
+marks
+
+
+Print all values.
+Example:
+student = {    "name": "Bhoomi",    "age": 18,    "marks": 95}
+dict={"NAME":"Bhoomi","AGE":18,"MARKS":98}
+print(dict)
+
+Q2. Add a new key (city) to dictionary.
+Output:
+{'name':'Bhoomi','age':18,'marks':95,'city':'Bangalore'}
+dict={"NAME":"Bhoomi","AGE":18,"MARKS":98}
+print(dict)
+dict["CITY"]="BANGLORE"
+print(dict)
+
+Q3. Update marks in dictionary.
+dict={"NAME":"Bhoomi","AGE":18,"MARKS":98}
+print(dict)
+dict["CITY"]="BANGLORE"
+dict["AGE"]="19"
+
+print(dict)
+
+Q4. Delete one key.
+dict={"NAME":"Bhoomi","AGE":18,"MARKS":98}
+print(dict)
+dict.pop("AGE")
+print(dict)
+
+Q5. Loop through dictionary:
+Print:
+name = Bhoomiage = 18marks = 95
+
+Part B — Dictionary (Medium)
+Q6. Count frequency of characters using dictionary.
+Example:
+applea = 1p = 2l = 1e = 1
+
+Q7. Count frequency of words in sentence.
+Example:
+I love python python
+Output:
+I = 1love = 1python = 2
+
+Q8. Find highest marks student from dictionary.
+Example:
+marks = {    "ram": 80,    "sita": 95,    "raj": 70}
+Output:
+sita = 95
+
+Part C — Sets
+Q9. Create set and print unique values.
+Example:
+{1,2,2,3,4,4}
+Output:
+{1,2,3,4}
+
+Q10. Union of two sets.
+Q11. Intersection of two sets.
+Q12. Difference of sets.
+
+Part D — File Handling
+Q13. Create file and write text.
+Q14. Read file content.
+Q15. Append text to file.
+Q16. Count number of lines in file.
+Q17. Count words in file.
+
+Part E — OOP (Important)
+Q18. Create class Student:
+
+
+name
+
+
+roll
+
+
+marks
+
+
+display()
+
+
+
+Q19. Inheritance:
+Create Animal → Dog
+Dog should bark.
+
+Q20. Method overriding example.
+
+Q21. Constructor inheritance using super().
+
+Tough
+Q22. Bank Account class:
+
+
+deposit
+
+
+withdraw
+
+
+balance
+
+
+
+Q23. Library Management:
+
+
+add book
+
+
+remove book
+
+
+show books
+
+
+
+Q24. Login system:
+
+
+username/password dictionary
+
+
+check login
+
+
+
+Q25. Mini project:
+Student Result Management System.
+Start Q1 and send code.
