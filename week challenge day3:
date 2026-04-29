@@ -6,17 +6,17 @@ for i in range(1,101):
 
 Q2
 Print numbers from 100 to 1.
-
+for i in range(100,0,-1):
+    print(i)
 Q3
 Print even numbers from 1 to 100.
-
-for i in range(0,101,2):
+for i in range(100,0,-2):
     print(i)
 Q4
 Print odd numbers from 1 to 100.
-
-for i in range(1,101,2):
+for i in range(1,100,2):
     print(i)
+
 Q5
 Print multiplication table of a given number.
 Example:
@@ -31,112 +31,259 @@ Example:
 5 → 15
 (1+2+3+4+5)
 n=int(input())
+sum=0
 for i in range(n,n+1):
-    i+=1
+    sum+=i
     print(i)
-
 
 Part B — Number Logic (7–13)
 Q7
 Count digits in a number.
 Example:
 12345 → 5
+num=input("ENter the num")
+count=0
+for i in range(len(num)):
+    count+=1
+print(count)
+
 
 Q8
 Sum of digits.
 Example:
 123 → 6
+num=input()
+sum=0
+for i in range(len(num)):
+    sum+=int(num[i])
+    print(sum)
 
 Q9
 Reverse a number.
 Example:
 1234 → 4321
+num = int(input())
+rev = 0
+while num > 0:
+    rem = num % 10
+    rev = rev * 10 + rem
+    num = num // 10
+
+print(rev)
 
 Q10
 Palindrome number check.
 Example:
 121 → Palindrome123 → Not palindrome
+num = int(input())
+rev = 0
+org=num
+
+while num > 0:
+    rem = num % 10
+    rev = rev * 10 + rem
+    num = num // 10
+
+print(rev)
+if (rev==org):
+   print("It is a palindrome")
+else:
+    print("not")
 
 Q11
 Find factorial.
 Example:
 5 → 120
 n!=n(n−1)(n−2)⋯1n!=n(n-1)(n-2)\cdots 1n!=n(n−1)(n−2)⋯1
+n=int(input())
+fact=1
+for i in range(1,n+1):
+    fact=fact*i
+    print(i)
+
 
 Q12
 Check prime number.
+n=int(input())
+for i in range(2,n+1):
+if (n%i==0):a
+    print("PRIME NUM")
+else:
+    print("NOT prime")
 
 Q13
 Print all prime numbers between 1 and n.
+for i in range(1,101):
+    if n%i==0:
+        print(i)
+
 
 Part C — Medium Logic (14–19)
 Q14
 Print Fibonacci series up to n terms.
 Example:
 0 1 1 2 3 5 8 ...
+n = int(input())
+
+term1 = 0
+term2 = 1
+
+for i in range(n):
+    print(term1, end=" ")
+    next = term1 + term2
+    term1 = term2
+    term2 = next
 
 Q15
 Find GCD of 2 numbers.
+x=int(input())
+y=int(input())
+while y!=0:
+    y=temp
+    y=x%y
+    x=temp
+print(x)
+x=12, y=18
+y = 12 % 18 = 12, x = 18
+x=18, y=12
+y = 18 % 12 = 6, x = 12
+x=12, y=6
+y = 12 % 6 = 0, x = 6
+
+Stop → print 6
 
 Q16
 Find LCM of 2 numbers.
+x = int(input())
+y = int(input())
+
+max_num = max(x, y)
+
+while True:
+    if max_num % x == 0 and max_num % y == 0:
+        print("LCM =", max_num)
+        break
+    max_num += 1
 
 Q17
 Check Armstrong number.
 Example:
 1531³ + 5³ + 3³ = 153
+num = int(input())
+temp = num
+sum = 0
+
+while temp > 0:
+    rem = temp % 10
+    sum = sum + rem**3
+    temp = temp // 10
+
+if sum == num:
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+
 
 Q18
 Check Strong number.
 Example:
 1451! + 4! + 5! = 145
+num = int(input())
+temp = num
+sum = 0
+
+while temp > 0:
+    rem = temp % 10
+
+    fact = 1
+    for i in range(1, rem+1):
+        fact = fact * i
+
+    sum = sum + fact
+    temp = temp // 10
+
+if sum == num:
+    print("Strong")
+else:
+    print("Not Strong")
 
 Q19
 Count even and odd digits in number.
 Example:
 12345Even digits = 2Odd digits = 3
-
+n=input()
+even=0
+odd=0
+for i in range(len(n)):
+    if int(n[i])%2==0:
+        even+=1
+        print(even)
+    else:
+        odd+=1
+        print(odd)
 Part D — Patterns (20–23)
 Q20
 Print:
 ***************
+print("****************")
 
 Q21
 Print:
 112123123412345
+n = int(input())
 
+for i in range(1, n+1):
+    for j in range(1, i+1):
+        print(j, end="")
+    print()
 Q22
 Print:
 ***************
+print("****************")
+
 
 Q23
 Print:
     *   ***  ***** ****************
 (pyramid)
+n = 5
+
+for i in range(1, n+1):
+    print(" "*(n-i), end="")
+    print("*"*(2*i-1))
 
 Part E — Tough (24–25)
 Q24
 Check perfect number.
 Example:
 6 = 1+2+3Perfect number
+n = int(input())
+sum = 0
+
+for i in range(1, n):
+    if n % i == 0:
+        sum += i
+
+if sum == n:
+    print("Perfect number")
+else:
+    print("Not perfect")
+
 
 Q25
 Guessing game:
-
-
 program stores secret number
-
-
 user keeps guessing
-
-
 if correct → win
-
-
 else continue
-
-
 (use while + break)
+secret = 7
 
-Finish these, and your loops will become much stronger.
-Day 4 = Strings (25 questions) 🔥
+while True:
+    guess = int(input("Guess number: "))
+
+    if guess == secret:
+        print("You win!")
+        break
+    else:
+        print("Try again")
