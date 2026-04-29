@@ -1,16 +1,8 @@
 Part A — Dictionary (Easy)
 Q1. Create a dictionary of student details:
-
-
 name
-
-
 age
-
-
 marks
-
-
 Print all values.
 Example:
 student = {    "name": "Bhoomi",    "age": 18,    "marks": 95}
@@ -30,7 +22,6 @@ dict={"NAME":"Bhoomi","AGE":18,"MARKS":98}
 print(dict)
 dict["CITY"]="BANGLORE"
 dict["AGE"]="19"
-
 print(dict)
 
 Q4. Delete one key.
