@@ -1,0 +1,450 @@
+Day 6 Questions
+Easy
+
+
+1.Handle divide by zero
+try:
+    n=int(input("ENter the number"))
+    print(10/n)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+2.Handle invalid integer input
+try:
+    n=int(input("Enter number: "))
+    print(10/n)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Enter number only")
+
+
+3.Write text into file.
+file=open("abcc.txt","w")
+print("HEllo,world",file=file)
+file.close()
+
+
+4.Read file
+file=open("abc.txt","r")
+print(file.read())
+file.close()
+
+5.Append text to file.
+file=open("abc.txt","a")
+print("WELCOME TO PYHTHON",file=file)
+file.close()
+
+
+Medium
+
+
+6.Count lines in file.
+file=open("abc.txt","r")
+count=0
+print("WELCOME TO PYHTHON",file=file)
+for line in file:
+    count+=1
+    print(count)
+file.close()
+
+
+7.Count words in file.
+file=open("abc.txt","r")
+count=0
+print("WELCOME TO PYHTHON",file=file)
+for line in file:
+    words=line.split()
+    count+=len(words)
+    print(count)
+file.close()
+
+8.file=open("abc.txt","r")
+count=0
+
+for line in file:
+    count+=1
+
+print("Total lines =",count)
+
+file.close()
+
+9.Count characters in file.
+file=open("abc.txt","r")
+count=0
+print("WELCOME TO PYHTHON",file=file)
+for line in file:
+    count+=len(words)
+    print(count)
+file.close()
+
+
+10.Copy file content.
+file1=open("abc.txt","r")
+data=file1.read()
+file1.close()
+
+file2=open("copy.txt","w")
+file2.write(data)
+file2.close()
+
+print("File copied")
+
+
+11.Student record system using file.
+file=open("abc.txt","a")
+file.write("NAME:srikar",file=file)
+file.write("CLASS:A11",file=file)
+file.close()
+
+
+Tough
+
+
+12.ATM using exception handling.
+Login system with 3 attempts.
+try:
+    for i in range(3):
+        acc_no=int(input("Enter the account number: "))
+        pin=int(input("Enter pin: "))
+        if acc_no==1234 and pin==1111:
+            print("Login successful")
+            break
+        else:
+            print("Wrong details")
+
+       else:
+            print("Try next time")
+
+except ValueError:
+    print("Enter numbers only")
+
+13.Shopping cart OOP.
+class shop:
+    def __init__(self):
+        self.items=[]
+    def add(self,item):
+        self.items.append(item)
+        print("item added")
+    def remove(self,item):
+        if self.items.remove(item):
+            print("items removed")
+        else:
+            print("item not found")
+    def show(self):
+        print("items",self.items)
+ while True:
+    print("1.ADD")
+    print("2.REMOVE")
+    print("3.SHOW")
+    print("4.EXIT")
+
+    ch=int(input())
+
+    if ch==1:
+        item=input("Enter item: ")
+        c.add(item)
+
+    elif ch==2:
+        item=input("Enter item: ")
+        c.remove(item)
+
+    elif ch==3:
+        c.show()
+
+    elif ch==4:
+        break   
+
+
+14.Employee salary management
+class employee:
+    def __init__(self,name,salary):
+        self.name=name
+        self.salary=salary
+
+    def increment(self,amount):
+        self.salary+=amount
+        print("Updated salary",self.salary)
+
+    def display(self):
+        print("Name:",self.name)
+        print("Salary:",self.salary)
+
+
+name=input("Enter name: ")
+salary=int(input("Enter salary: "))
+
+e=employee(name,salary)
+
+while True:
+    print("1.INCREMENT")
+    print("2.DISPLAY")
+    print("3.EXIT")
+
+    ch=int(input())
+
+    if ch==1:
+        amount=int(input("Enter increment amount: "))
+        e.increment(amount)
+
+    elif ch==2:
+        e.display()
+
+    elif ch==3:
+        break
+
+
+15.Library management with file storage
+
+while True:
+    print("1.ADD BOOK")
+    print("2.SHOW BOOKS")
+    print("3.EXIT")
+
+    ch=int(input())
+
+    if ch==1:
+        book=input("Enter book name: ")
+
+        file=open("library.txt","a")
+        file.write(book+"\n")
+        file.close()
+
+        print("Book added")
+
+    elif ch==2:
+        file=open("library.txt","r")
+        print(file.read())
+        file.close()
+
+    elif ch==3:
+        break
+
+easy:
+16.else in Exception Handling
+try:
+    n=int(input("Enter the number"))
+    print(10/n)
+except ZeroDivisionError:
+    print("Cannt be divide bt zero")
+except ValueError:
+    print("String cannot be divided")
+else:
+    print("No erroe")
+
+17.finally
+Concept:
+finally runs always, whether error comes or not.
+try:
+    n=int(input("Enter the number"))
+    print(10/n)
+except ZeroDivisionError:
+    print("Cannt be divide bt zero")
+except ValueError:
+    print("String cannot be divided")
+else:
+    print("No erroe")
+finally:
+    print("Whatever the reson this runs")
+
+
+18Age validation
+try:
+    age=int(input("ENter the age"))
+    if age==18:
+        print("YOUR ELGIBLE")
+    elif age<13:
+        print("Teenager")
+    elif age>=18:
+        print("your eligible for bote and license ")
+except ValueError:
+        print("Enter a valid age")
+finally:
+    print("Thank you")
+
+
+19.ATM insufficient balance
+balance=10000
+try:
+    amount=int(input("Enter the age"))
+    if amount<balance:
+        print("Insufficient balance")
+    else:
+        balance-=amount
+        print(abs(balance))
+finally:
+    print("Thank u")
+
+20.Password validation
+try:
+    password=int(input("Enter the password"))
+    if password==12345:
+        print("Correct password")
+    else:
+        print("Invalid password")
+finally:
+    print("Thank you")
+
+21.Calculator with exception handling
+try:
+    a=int(input("Enter the first number"))
+    b=int(input("Enter the second number"))
+    print("ADD")
+    print("SUB")
+    print("MULTI")
+    print("DIVI")
+    ch=int(input("Enter the optin"))
+    if ch==1:
+        print("Add",a+b)
+    elif ch==2:
+        print("SUB",a-b)
+    elif ch==3:
+        print("MULTI",a*b)
+    elif ch==4:
+        try:
+            print("DIVI",a/b)
+        except ZeroDivisionError:
+              print("cannot be divide by zero")
+              print(e)
+    else:
+        print("INvalid choice")
+finally:
+    print("Thank you")
+
+22.Count characters in file
+file=open("abc.txt","r")
+count=0
+
+for line in file:
+    count+=len(line)
+
+print("Characters =",count)
+
+file.close()
+
+23.ATM OOP system
+class ATM:
+    def __init__(self,balance):
+        self.balance=balance
+
+    def deposit(self,amount):
+        self.balance+=amount
+        print("Balance =",self.balance)
+
+    def withdraw(self,amount):
+        if amount>self.balance:
+            raise ValueError("Insufficient balance")
+
+        self.balance-=amount
+        print("Balance =",self.balance)
+
+    def show(self):
+        print("Balance =",self.balance)
+
+
+a=ATM(1000)
+
+while True:
+    try:
+        print("1.DEPOSIT")
+        print("2.WITHDRAW")
+        print("3.SHOW")
+        print("4.EXIT")
+
+        ch=int(input())
+
+        if ch==1:
+            amount=int(input("Enter amount: "))
+            a.deposit(amount)
+
+        elif ch==2:
+            amount=int(input("Enter amount: "))
+            a.withdraw(amount)
+
+        elif ch==3:
+            a.show()
+
+        elif ch==4:
+            break
+
+        else:
+            print("Invalid choice")
+
+    except ValueError as e:
+        print(e)
+24.Student management OOP
+class student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+
+    def display(self):
+        print("Name =",self.name)
+        print("Marks =",self.marks)
+
+
+try:
+    name=input("Enter name: ")
+    marks=int(input("Enter marks: "))
+
+    if marks<0 or marks>100:
+        raise ValueError("Marks should be between 0 and 100")
+
+    s=student(name,marks)
+    s.display()
+
+except ValueError as e:
+    print(e)
+
+25.Notes app
+class Notes_app:
+    def __init__(self,note):
+        self.note=note
+
+    def Add(self):
+        note=input("Enter note: ")
+        self.note.append(note)
+        print("NOTEBOOK ADDED",self.note)
+
+    def Remove(self):
+        note=input("Enter note to remove: ")
+
+        if note in self.note:
+            self.note.remove(note)
+            print("BOOK is removed",self.note)
+        else:
+            print("Note not found")
+
+    def show(self):
+        print("DISPLAY",self.note)
+
+
+n=Notes_app([])
+
+while True:
+    try:
+        print("1.ADD")
+        print("2.REMOVE")
+        print("3.SHOW")
+        print("4.EXIT")
+
+        ch=int(input("Enter the choice: "))
+
+        if ch==1:
+            n.Add()
+
+        elif ch==2:
+            n.Remove()
+
+        elif ch==3:
+            n.show()
+
+        elif ch==4:
+            break
+
+        else:
+            print("Invalid choice")
+
+    finally:
+        print("Thank you")
+
