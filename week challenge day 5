@@ -207,15 +207,33 @@ while True:
 Q24. Login system:
 username/password dictionary
 check login
-n=int(input())
-for i in range(n):
-username=int(input())
+class login:
+    def __init__(self,username,password):
+        self.username=username
+        self.password=password
+    def display(self):
+        details={"NAME":self.username,
+                 "PASSWORD": self.password
+                 }
+        print("DETAILS",details)
+while True:
+    print("Enter the username and password")
+    print("EXIT")
+    if ch==1:
+        username=input("Enter the username")
+        password=int(input("Enter the password"))
+        l=login(username,password)
+        l.display()
 
+    elif ch==2:
+        break
+    else:
+        print("Invalid")
 
+    
 
 
 
 Q25. Mini project:
 Student Result Management System.
-Start Q1 and send code.
 
