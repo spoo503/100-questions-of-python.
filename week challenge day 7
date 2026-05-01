@@ -1,0 +1,231 @@
+Part A — Easy (1–10)
+
+
+1.Create a function that prints Hello World
+def greet():
+    print("Hello,World")
+greet()
+
+2.Create function to add 2 numbers
+def calc(a,b):
+    return a+b
+print("Add",add(2,3))
+
+3.Function to subtract 2 numbers
+def calc(a,b):
+    return a-b
+print("Subtraction of two jnumbers",calc(2,3))
+
+
+4.Function to multiply 2 numbers
+def calc(a,b):
+       return a*b
+print("Multiplication of two jnumbers",calc(2,3))
+
+
+
+5.Function to divide 2 numbers.
+def calc(a,b):
+     if b!=0:
+         return a/b
+    else:
+        print("cannot be divided by zero")
+print("Division of two jnumbers",calc(2,3)
+)
+
+
+6.Function to find square of number.
+def calc(n):
+     return n*n
+print(" Squareof  numbers",calc(2)
+)
+
+
+7.Function to find cube of number.
+def calc(n):
+     return n*n*n
+print(" Squareof  numbers",calc(2)
+)
+
+
+8.Function to check even / odd
+def num(n):
+    if n%2==0:
+        print("Even")
+    else:
+        print("odd")
+num(2)
+
+
+9.Function to check positive / negative / zero
+def num(n):
+    if n>0:
+        print("Positive")
+    elif n<0:
+        print("Negative")
+    elif n==0:
+        print("ZERO")
+    else:
+        print("Invalid num")
+num(2)
+
+10.Function to find largest of 3 numbers
+def greatest(a,b,c):
+    if a>=b and a>=c:
+        print("A is greater")
+    elif b>=a and b>=c:
+        print("B is greater")
+    else:
+        print("C is greater")
+greatest(2,3,4)
+        
+
+
+Part B — Medium (11–18)
+
+
+11.Function to count vowels in string
+def str(s):
+    count=0
+    for ch in s:
+        if s in "aeiouAEIOU":
+            count+=1
+        print("Number of vowels",count)
+str(Hello,world)
+
+12.Function to reverse string.
+def str(s):
+    print(s[::-1])
+str("hello")
+
+13.Function to check palindrome.
+def str(s):
+    if s==s[::-1]:
+        print("Its a palindrome")
+    else:
+        print("NOt a plaindrome")
+str(mom)
+
+14.Function to calculate factorial
+def factorial(n):
+    fact=1
+    for i in range(2,n+1):
+        fact=fact*i
+    print(fact)
+factorial(3)
+
+15.Function to check prime number.
+def is_prime(n):
+    if n < 2:
+        print("Not prime")
+        return
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print("Not prime")
+            return
+    print("Prime number")
+ 
+is_prime(7)
+ 
+
+16.Function to print Fibonacci series.
+def fib(n):
+    term1=0
+    term2=1
+    for i in range(n) :
+        temp=term1
+        term1=term2
+        term2=temp
+    print(term2)
+fib(2)
+
+
+17.Function to sum list elements.
+def sum_list(n):
+    sum=0
+    for i in n:
+        sum+=i
+    print(sum)
+sum_list[1,2,3]
+    
+
+18.Function to find max element in list
+def max_list(n):
+    print(max(n))
+max_list([1,2,3])
+    
+
+
+Part C — Recursion (19–22)
+
+
+19.Factorial using recursion.
+def factorial(n):
+    if n == 0 or n == 1:   # base case — stop here
+        return 1
+    return n * factorial(n - 1)  # calls itself
+
+print(factorial(5))  # 120
+
+
+20.Sum of numbers from 1 to n using recursion
+def sum_n(n):
+    if n == 0:           # base case — stop here
+        return 0
+    return n + sum_n(n - 1)  # calls itself
+
+print(sum_n(5))  # 15
+
+21.Fibonacci using recursion
+def fibonacci(n):
+    if n == 0:                         # base case 1
+        return 0
+    if n == 1:                         # base case 2
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)  # calls itself twice
+
+print(fibonacci(6))  # 8
+
+
+22.Reverse string using recursion
+def reverse_string(s):
+    if len(s) == 0:       # base case — empty string, stop
+        return ""
+    return s[-1] + reverse_string(s[:-1])  # last char + reverse the rest
+
+print(reverse_string("hello"))  # olleh
+
+
+Part D — Exception Handling (23–25)
+
+
+23.Handle divide by zero.
+try:
+    n=int(input())
+    print(10/n)
+except ZerDivisionError:
+          print("Cannot be divided by zero")
+
+
+24.Handle invalid input (ValueError).
+try:
+    n=int(input())
+    print(10/n)
+except ZerDivisionError:
+          print("Cannot be divided by zero")
+except ValueError:
+        print("enter the number")
+
+
+
+25.Handle file not found (FileNotFoundError).
+
+file=open("abc.txt","r")
+data=file.read
+print(data)
+except file not found:
+     print("File does not exist")
+
+
+
+
