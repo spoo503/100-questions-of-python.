@@ -4,7 +4,7 @@ class Student:
     def __init__(self,name,roll):
         self.name=name
         self.roll=roll
-    def display():
+    def display(self):
         print("Name of the student",self.name)
         print("Roll number of the sstudent",self.roll)
 name=input("Enter the name")
@@ -17,9 +17,9 @@ class car:
     def __init__(self,brand,model):
         self.brand=brand
         self.model=model
-    def display():
-        print("Name of the student",self.name)
-        print("roll number",self.roll)
+    def display(self):
+        print("Name of the student",self.brand)
+        print("roll number",self.model)
 brand=input("Enter the brand of the car")
 model=input("ENter the model of car")
 c=car(brand,model)
@@ -29,28 +29,29 @@ c.display()
 class Bankaccount:
     def __init__(self,balance):
         self.balance=balance
-    def deposite(self):
+    def deposite(self,amount):
         balance+=amount
         print("deposited amount",self.balance)
-amount=int(input("Enter the amount"))
 balance=int(input("Enter the balance"))
+amount=int(input("Enter the amount")) 
 b=Bankaccount(balance)
-b.deposite()
+b.deposite(amount)
 
 
 4.Create class BankAccount → withdraw method
 class Bankaccount:
     def __init__(self,balance):
         self.balance=balance
-    def withdraw(self):
-       if  balance>amount:
+    def withdraw(self,amount):
+       if  balance>=amount:
+             self.balance-=amount
             print("deposited amount",self.balance)
         else:
             print("Insufficient balance")
-amount=int(input("Enter the amount"))
 balance=int(input("Enter the balance"))
+amount=int(input("Enter the amount"))
 b=Bankaccount(balance)
-b.withdraw()
+b.withdraw(amount)
 
 
 5.Create class Rectangle → area method
@@ -70,24 +71,29 @@ r.Area()
 class Circle:
     def __init__(self,r):
         self.r=r
-    def Area(self):
+    def circumference(self):
         area=2*3.14*self.r
-        print("Area of the circle",area)
+        print("circumference of the circle",area)
 r=int(input("Enter the Radius"))
 a=Circle(r)
 a.Area()
 
 7.Create class Employee → salary calculation.
 class Employee:
-    def __init__(self,balance):
-        self.balance=balance
-    def deposite(self):
-        balance+=amount
-        print("deposited amount",self.balance)
-amount=int(input("Enter the amount"))
-balance=int(input("Enter the balance"))
-b=Employee(balance)
-b.deposite()
+    def __init__(self,name,basic_salary):
+        self.name=name
+        self.basic_salary=basic_salary
+    def  calculate(self):
+         hra = self.basic_salary * 0.2
+        da = self.basic_salary * 0.1
+        total = self.basic_salary + hra + da
+        print("Employee:", self.name)
+        print("Total salary:", total)
+
+name = input("Enter name: ")
+basic = int(input("Enter basic salary: "))
+e = Employee(name, basic)
+e.calculate_salary()
 
 8.Constructor practice (__init__)
 class Student:
@@ -102,48 +108,137 @@ roll=int(input("Enter the roll number"))
 s=Student(name,roll)
 
 9.Destructor practice (__del__)
+class Student:
+    def __init__(self, name, roll):  # constructor
+        self.name = name
+        self.roll = roll
+        print("Object created for", self.name)
+    def display(self):
+        print("Name:", self.name, "| Roll:", self.roll)
+    def __del__(self):  # destructor
+        print("Object deleted for", self.name)
 
+s = Student("Alice", 101)
+s.display()
+del s  # triggers __del__
 
 
 Part B — Inheritance / Polymorphism (11–17)
 11.Animal → Dog
 class Animal:
     def __init__(self):
+       pass
+    def sound(self):
+        print("some animal sound")
 class dog(Animal):
-    def __init__(self):
+    def sound(self):
         print("Bark")
+d = Dog(); d.sound()
 
 12.Animal → Cat
 class Animal:
     def __init__(self):
+           pass
+    def sound(self):
+        print("some animal sound")
 class cat(Animal):
-    def __init__(self):
+    def sound(self):
         print("Meow")
+c = Cat(); c.sound()
 
 13.Vehicle → Bike
 class Vehicle:
     def __init__(self):
+        pass
+    def move(self):
+        print("MOving")
 class bike(Vehicle):
-    def __init__(self):
+    def move(self):
         print("Bike")
+b = Bike(); b.move()
 
 14.Person → Student
 class Person:
-    def __init__(self):
-class dog(Animal):
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
+    def display(self):
+        print("Name:", self.name)
+
+class Student(Person):  # ← was inheriting Animal!
+    def __init__(self, name, roll):
+        super().__init__(name)  # ← call parent constructor
+        self.roll = roll
+    def display(self):
+        super().display()
+        print("Roll:", self.roll)
+
+s = Student("Alice", 101)
+s.display()
+
+
+15.Method overriding
+class Person:
+    def __init__(self, name):
+        self.name = name
+    def display(self):
+        print("Name:", self.name)
+
+class Student(Person):  # ← was inheriting Animal!
+    def __init__(self, name, roll):
+        super().__init__(name)  # ← call parent constructor
+        self.roll = roll
+    def display(self):
+        super().display()
+        print("Roll:", self.roll)
+
+s = Student("Alice", 101)
+s.display()
+
+
+16.Multiple inheritance
+class Father:
+    def strong(self):
+        print("Strong")
+
+class Mother:
+    def caring(self):
+        print("Caring")
+
+class Child(Father, Mother):   # inherits from BOTH
+    def study(self):
+        print("Studying")
+
+c = Child()
+c.strong()    # from Father
+c.caring()   # from Mother
+c.study()    # own method
+17.Multilevel inheritance
+class Animal:
+    def eat(self):
+        print("Eating")
+
+class Dog(Animal):          # Dog inherits from Animal
+    def bark(self):
         print("Bark")
 
-Method overriding
-Multiple inheritance
-Multilevel inheritance
+class Puppy(Dog):           # Puppy inherits from Dog (and Animal too!)
+    def play(self):
+        print("Playing")
+
+p = Puppy()
+p.eat()    # works — came from Animal
+p.bark()   # works — came from Dog
+p.play()   # works — own method
+
+
 Part C — File Handling (18–22)
-Create file and write text
-Read file contents
-Append data to file
-Count lines in file
-Count words in file
+this questions are done in previous challenges
+18.Create file and write text
+19.Read file contents
+20.Append data to file
+21.Count lines in file
+22.Count words in file
 Part D — Modules / Misc (23–25)
-Use math module → square root
-Random number generation (random)
-Date & time module basics (datetime)
+23.Use math module → square root
+24.Random number generation (random)
+25.Date & time module basics (datetime)
