@@ -1,0 +1,149 @@
+Part A — OOP Basics (1–10)
+1.Create class Student with name and roll
+class Student:
+    def __init__(self,name,roll):
+        self.name=name
+        self.roll=roll
+    def display():
+        print("Name of the student",self.name)
+        print("Roll number of the sstudent",self.roll)
+name=input("Enter the name")
+roll=int(input("Enter the roll number"))
+s=Student(name,roll)
+s.display()
+
+2.Create class Car with brand and model.
+class car:
+    def __init__(self,brand,model):
+        self.brand=brand
+        self.model=model
+    def display():
+        print("Name of the student",self.name)
+        print("roll number",self.roll)
+brand=input("Enter the brand of the car")
+model=input("ENter the model of car")
+c=car(brand,model)
+c.display()
+
+3.Create class BankAccount → deposit method
+class Bankaccount:
+    def __init__(self,balance):
+        self.balance=balance
+    def deposite(self):
+        balance+=amount
+        print("deposited amount",self.balance)
+amount=int(input("Enter the amount"))
+balance=int(input("Enter the balance"))
+b=Bankaccount(balance)
+b.deposite()
+
+
+4.Create class BankAccount → withdraw method
+class Bankaccount:
+    def __init__(self,balance):
+        self.balance=balance
+    def withdraw(self):
+       if  balance>amount:
+            print("deposited amount",self.balance)
+        else:
+            print("Insufficient balance")
+amount=int(input("Enter the amount"))
+balance=int(input("Enter the balance"))
+b=Bankaccount(balance)
+b.withdraw()
+
+
+5.Create class Rectangle → area method
+class Rectangle:
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
+    def Area(self):
+        area=self.l*self.b
+        print("Area of the rectangle",area)
+l=int(input("Enter the length"))
+b=int(input("Enter the breadth"))
+r=Rectangle(l,b)
+r.Area()
+
+6.Create class Circle → circumference method
+class Circle:
+    def __init__(self,r):
+        self.r=r
+    def Area(self):
+        area=2*3.14*self.r
+        print("Area of the circle",area)
+r=int(input("Enter the Radius"))
+a=Circle(r)
+a.Area()
+
+7.Create class Employee → salary calculation.
+class Employee:
+    def __init__(self,balance):
+        self.balance=balance
+    def deposite(self):
+        balance+=amount
+        print("deposited amount",self.balance)
+amount=int(input("Enter the amount"))
+balance=int(input("Enter the balance"))
+b=Employee(balance)
+b.deposite()
+
+8.Constructor practice (__init__)
+class Student:
+    def __init__(self,name,roll):
+        self.name=name
+        self.roll=roll
+    def display():
+        print("Name of the student",self.name)
+        print("Roll number of the sstudent",self.roll)
+name=input("Enter the name")
+roll=int(input("Enter the roll number"))
+s=Student(name,roll)
+
+9.Destructor practice (__del__)
+
+
+
+Part B — Inheritance / Polymorphism (11–17)
+11.Animal → Dog
+class Animal:
+    def __init__(self):
+class dog(Animal):
+    def __init__(self):
+        print("Bark")
+
+12.Animal → Cat
+class Animal:
+    def __init__(self):
+class cat(Animal):
+    def __init__(self):
+        print("Meow")
+
+13.Vehicle → Bike
+class Vehicle:
+    def __init__(self):
+class bike(Vehicle):
+    def __init__(self):
+        print("Bike")
+
+14.Person → Student
+class Person:
+    def __init__(self):
+class dog(Animal):
+    def __init__(self):
+        print("Bark")
+
+Method overriding
+Multiple inheritance
+Multilevel inheritance
+Part C — File Handling (18–22)
+Create file and write text
+Read file contents
+Append data to file
+Count lines in file
+Count words in file
+Part D — Modules / Misc (23–25)
+Use math module → square root
+Random number generation (random)
+Date & time module basics (datetime)
