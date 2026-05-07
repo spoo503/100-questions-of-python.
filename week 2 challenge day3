@@ -1,4 +1,4 @@
-Q1. Square list numbers using map()
+##Q1. Square list numbers using map()
 num = [1, 2, 3, 4, 5]
 
 result = list(map(lambda x: x*x, num))
