@@ -1,0 +1,590 @@
+EASY (10)
+ Print Statements & Variables.
+1 .Print your name, college, and branch on separate lines.
+class Solution:
+    def information(self):
+        for i in range(5):
+            name=input("Enter the name of the student")
+            clg=input("Enter the college name")
+            branch=input("enter the branch name")
+            print(name)
+            print(clg)
+            print(branch)
+s=Solution()
+s.information()
+
+2.Store your name, age, and CGPA in variables and print them.
+class Solution:
+    def information(self):
+        for i in range(5):
+            name=input("Enter the name of the student")
+            clg=input("Enter the college name")
+            branch=input("enter the branch name")
+            age=int(input("Enterthe age of the student"))
+            CGPA=float(input("Enter the cgpa of the year"))
+            print(name)
+            print(clg)
+            print(branch)
+            print(age)
+            print(CGPA)
+s=Solution()
+s.information()
+########If a variable is needed only inside one function → use normal variable (a, b, name).###############################
+
+
+
+
+###########If multiple methods need the same variable → use instance variable (self.a, self.b, self.name).######################
+
+Data Types & Operators
+3.Take two numbers as input and print:
+Sum
+Difference
+Product
+Quotient
+class Calculator:
+    def simple_calculator(self):
+        self.a=int(input("ENter the value of a "))
+        self.b=int(input("ENter the value of b "))
+    def add(self):
+        result=self.a+self.b
+        print("SUM OF TWO NUMBERS",result)
+    def sub(self):
+        result=self.a-self.b
+        print("DIFF of a and b is",result)
+    def product(self):
+        result=self.a*self.b
+        print("Product of a and b",result)
+    def div(self):
+        if self.b==0:
+            print("Cannot be divided by zero")
+        else:
+            result=self.a/self.b
+            print("Division of a and b is",result)
+c=Calculator()
+c.simple_calculator()  #we must call this function
+c.add()
+c.sub()
+c.product()
+        
+4.Check whether a number is positive, negative, or zero.
+class Solution:
+    def positive_negative(self):
+      try:
+           num=int(input("Enter the number"))
+           if num>0:
+               print("POSTIVE")
+           elif num==0:
+               print("ZERO")
+           else:
+               print("NEGATIVE")
+      except ValueError:
+              return -1
+s=Solution()
+print(s.positive_negative())   #print is used insteasd of just calling this is bcz to display it on the screen
+#when u enter a string of u need to get return -1 then use errors and exceptions concept and 
+Typecasting & Input
+
+5.Take age as input and print:
+age=int(input("ENter the age"))
+print(f"You are",age,"years old")
+#we use format secifiers to add the sentences in between.
+You are 20 years old.
+
+Conditional Statements
+6.Find the largest among two numbers.
+class Solution:
+    def largest_element(self):
+     try:    
+        a=int(input("Enter the value of a"))
+        b=int(input("Enter the value of b"))
+        c=int(input("Enter the value of c"))
+        if a>b and a>c:
+            print("A is greater")
+        elif b>a and b>c:
+            print("B is greater")
+        else:
+            print("C is greater")
+     except ValueError:
+            return -1
+s=Solution()
+print(s.largest_element())
+
+
+#########print("C is greater")
+
+but it does not return anything.
+
+When a function doesn't return anything, Python automatically returns:
+None##############
+7.Check whether a student is eligible for voting (18+).
+class Solution:
+    def voting(self):
+     try:    
+        age=int(input("Enter the age of the student "))
+        if age>=18:
+            return "eligible to vote"
+        return "not"
+     except ValueError:
+            return -1
+s=Solution()
+print(s.voting())
+        
+        
+        
+Loops
+8.Print numbers from 1 to 20 using a for loop.
+class Solution:
+    def num(self):
+        for i in range(1,21):
+            print(i)
+s=Solution()
+s.num()
+9.Print even numbers from 1 to 50 using a while loop.
+class Solution:
+    def num(self):
+        num=int(input("ENter the number"))
+        while(num!=0):
+            if num%2==0:
+                return "EVEN"
+            else:
+                return -1
+        return -1
+s=Solution()
+print(s.num())
+
+
+Strings
+
+
+10.Take a string and print:
+Length
+Uppercase
+Lowercase
+class Solution:
+    def string_info(self):
+        self.s=input("Enter the string")
+    def length_string(self):
+        count=0
+        for i in self.s:
+            count+=1
+        print("Length of the string",count)
+    def upper_string(self):
+        print("uppercase of the string",self.s.upper())
+    def lower_string(self):
+        print("lowercase of the string",self.s.lower())
+s=Solution()
+s.string_info()
+s.length_string()
+s.upper_string()
+s.lower_string()
+##############str=input("Enter the string")
+print(len(str))
+print(str.upper())
+print(str.lower())##########################
+
+
+
+MEDIUM (10)
+Strings
+11.Count vowels in a string.
+str=input("Enter the string")
+count=0
+for ch in str:
+    if ch in "aeiou":
+        count+=1
+print(count)
+
+    
+12.Reverse a string without slicing.
+s = input("Enter the string: ")
+rev = ""
+
+for ch in s:
+    rev = ch + rev
+
+print(rev)
+Lists
+13.Take 5 numbers into a list and print:
+Maximum
+Minimum
+Sum
+Average
+l = []
+
+for i in range(5):
+    num = int(input("Enter a number: "))
+    l.append(num)
+
+print("Maximum:", max(l))
+print("Minimum:", min(l))
+print("Sum:", sum(l))
+print("Average:", sum(l)/len(l))
+##l=[12,2,3,45,6,7]
+print(max(l))
+print(min(l))
+print(sum(l))
+print(max(l)+min(l)/2)##
+
+14.Remove duplicate elements from a list.
+l = []
+
+for i in range(5):
+    num = int(input("Enter a number: "))
+    l.append(num)
+s=set(l)
+print(s)
+If the question says "remove duplicates while preserving order"
+l = []
+
+for i in range(5):
+    num = int(input("Enter a number: "))
+    l.append(num)
+
+unique = []
+
+for i in range(len(l)):
+    found = False
+
+    for j in range(len(unique)):
+        if l[i] == unique[j]:
+            found = True
+            break
+
+    if found == False:
+        unique.append(l[i])
+
+print(unique)
+Tuples
+15.Create a tuple of 5 numbers and find:
+Largest element
+Smallest element
+Sum
+l = []
+
+for i in range(5):
+    num = int(input("Enter a number: "))
+    l.append(num)
+largest=l[0]
+smallest=l[0]
+for i in l:
+    if i>largest:
+        largest=i
+    if i<smallest:
+        smallest=i
+print("largest Element",largest)
+print("smallest  Element",smallest)
+print(largest+smallest)
+print(sum(l))
+
+Sets
+
+16.Find union, intersection, and difference of two sets.
+s={1,2,3,4,4,5,6}
+s1={1,3,4,5,8,9}
+print("union of s and s1",s|s1)
+print("Intersection of s and s1",s&s1)
+print("diffrence of two sets",s-s1)
+
+
+Dictionaries
+17.Create a student dictionary and print all keys and values.
+Details={"name":"SRIKAR",
+         "age":18,
+         "Course":"MMBS"}
+print(Details.keys())
+print(Details.values())
+print(Details.items())
+
+Functions
+18.Create a function to check whether a number is even or odd.
+def check_num():
+    num=int(input("Enter the number"))
+    if num %2==0:
+        print("Even")
+    else:
+        print("odd")
+    return -1
+check_num()
+b.def check_num(num):
+    if num %2==0:
+        print("Even")
+    else:
+        print("odd")
+num=int(input("Enter the number:"))
+print(check_num(num))
+
+19.Create a function that returns the factorial of a number.
+def fact_num(num):
+    fact=1
+    for i in range(1,num+1):
+        fact=fact*i
+    print(fact)
+num=int(input("Enter the number"))
+fact_num(num)
+
+Modules
+20.Use the math module to find:
+Square root
+Power
+Factorial
+import math
+num=int(input("Enter the number"))
+print("Square of number",math.sqrt(num))
+print("power of number",math.pow(2,num))
+print("Factorial of number",math.factorial(num))
+    import math
+
+math.sqrt(25)       # 5.0
+math.factorial(5)   # 120
+math.pow(2,3)       # 8.0
+math.ceil(4.2)      # 5
+math.floor(4.8)     # 4
+math.pi             # 3.14159...
+math.sqrt()
+math.pow()
+math.factorial()
+
+
+
+TOUGH (10)
+Loops + Logic
+21.Print the following pattern:
+1
+12
+123
+1234
+12345
+num=int(input("Enter the number"))
+for  i in range (num):
+    for j in range(1,i+1):
+        print(j,end="")
+    print()
+
+
+22.Print:
+*
+**
+***
+****
+*****
+num=int(input("Enter the number"))
+for  i in range (num):
+    for j in range(1,i+1):
+        print("*",end="")
+    print()
+
+Numbers
+23.Check whether a number is Prime.
+num=int(input("Enter the number"))
+if num<=1 :
+    print("IT isneither prime nor even")
+for i in range(2,num):
+    if num%i==0:
+        print("It is  not prime number")
+        prime=False
+print("prime")
+    
+24.Check whether a number is Armstrong.
+num = int(input("Enter a number: "))
+
+original = num
+count = len(str(num))
+total = 0
+
+while num > 0:
+    digit = num % 10
+    total = total + digit ** count
+    num = num // 10
+
+if total == original:
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+25.Check whether a number is Palindrome.
+num = int(input("Enter a number: "))
+
+original = num
+reverse = 0
+
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num = num // 10
+
+if reverse == original:
+    print("Palindrome Number")
+else:
+    print("Not a Palindrome Number")
+26.Generate Fibonacci series up to n terms.
+num=int(input("ENter the number"))
+term1=0
+term2=1
+if num==0:
+    print("fibonoic series is 0")
+elif num==1:
+    print("fibonoic series is 1")
+for i in range(2,num+1):
+    next_term=term1+term2
+    term2 =term1
+    term2=next_term
+print("Fibonoic series",term2)
+
+Functions + Lists
+27.Find the second largest element in a list without sorting.
+l = [12, 45, 2, 67, 34]
+
+largest = l[0]
+second_largest = l[0]
+
+for i in l:
+    if i > largest:
+        second_largest = largest
+        largest = i
+
+    elif i > second_largest and i != largest:
+        second_largest = i
+
+print("Second Largest:", second_largest)
+
+OOP
+28.Create a Student class with:
+name
+age
+marks
+class Solution:
+    def info(self):
+        name=input("Enter the name of the student")
+        age=int(input("Enter the mage fot the student"))
+        total=0
+        for i in range(3):
+            marks=int(input("Enter the marks of the subject"))
+            total+=marks
+        print("NAME",name)
+        print("AGE",age)
+        print("TOTAL MARKS",total)
+s=Solution()
+s.info()
+
+29.Create 3 objects and display details.
+Inheritance
+Create:
+Person
+   ↓
+Student
+Store name, age, and roll number and display them.
+class Person:
+    def get_person(self):
+        self.name = input("Enter Name: ")
+        self.age = int(input("Enter Age: "))
+
+
+class Student(Person):
+    def get_student(self):
+        self.roll_no = int(input("Enter Roll Number: "))
+
+    def display(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Roll Number:", self.roll_no)
+
+
+s1 = Student()
+s1.get_person()
+s1.get_student()
+
+print("\nStudent 1 Details")
+s1.display()
+
+
+
+30.Exception Handling
+Create a calculator that:
+Takes two inputs
+Handles division by zero
+Handles invalid input
+Uses try, except, else, finally
+The exception handling should be around the code that may cause an error, not around the function definitions.
+class Calculator:
+Approach 1: Call methods inside simple_calculator()
+    def simple_calculator(self):
+        try:
+            self.a = int(input("Enter the value of a: "))
+            self.b = int(input("Enter the value of b: "))
+
+            self.add()
+            self.sub()
+            self.product()
+            self.div()
+
+        except ValueError:
+            print("Invalid Input")
+
+        except ZeroDivisionError:
+            print("You cannot divide by zero")
+
+        else:
+            print("Calculation Successful")
+
+        finally:
+            print("THANK YOU")
+
+    def add(self):
+        print("SUM OF TWO NUMBERS", self.a + self.b)
+
+    def sub(self):
+        print("DIFF of a and b is", self.a - self.b)
+
+    def product(self):
+        print("Product of a and b", self.a * self.b)
+
+    def div(self):
+        print("Division of a and b is", self.a / self.b)
+
+c = Calculator()
+c.simple_calculator()
+
+b.Approach 2: Call methods outside the class
+class Calculator:
+
+    def simple_calculator(self):
+        try:
+            self.a = int(input("Enter the value of a: "))
+            self.b = int(input("Enter the value of b: "))
+
+        except ValueError:
+            print("Invalid Input")
+            return False
+
+        return True
+
+    def add(self):
+        print("SUM OF TWO NUMBERS", self.a + self.b)
+
+    def sub(self):
+        print("DIFF of a and b is", self.a - self.b)
+
+    def product(self):
+        print("Product of a and b", self.a * self.b)
+
+    def div(self):
+        try:
+            print("Division of a and b is", self.a / self.b)
+
+        except ZeroDivisionError:
+            print("You cannot divide by zero")
+
+        else:
+            print("Calculation Successful")
+
+        finally:
+            print("THANK YOU")
+
+
+c = Calculator()
+
+if c.simple_calculator():
+    c.add()
+    c.sub()
+    c.product()
+    c.div()
