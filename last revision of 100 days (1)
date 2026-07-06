@@ -1,0 +1,134 @@
+Day 1 — Variables, Data Types, Type Conversion, I/O
+
+Easy:
+Swap two variables without a third variable;
+class swap:
+    def __init__(self):
+        pass
+    def swap(self):
+        a=int(input("Enter the number "))
+        b=int(input("Enter the value of b"))
+        a=a+b
+        b=a-b
+        a=a-b
+        print("The value of a",a)
+        print("The value of b is",b)
+s=swap()
+print(s.swap())
+
+Convert Celsius to Fahrenheit;
+class degree:
+    def __init__(self):
+        pass
+    def degree(self):
+        a=int(input("Enter the degree to convert celsius to f "))
+        f=(a*9/5)+32
+        print("The value of a",a)
+        print("The value of f is",f)
+s=degree()
+print(s.degree())
+
+        
+       
+Check if a number is int or float;
+class degree:
+    def __init__(self):
+        pass
+    def num(self):
+        a=input("Enter the num ")
+        if '.'in a:   #does the string a contain a dot (.
+            print("Float")
+        else:
+            print("int")
+        print("The value of a",a)
+s=degree()
+print(s.num())
+
+        
+       
+Take user input and print its type;
+class degree:
+    def __init__(self):
+        pass
+    def num(self):
+        a=input("Enter the num ")
+        print("The type of a",type(a))
+s=degree()
+print(s.num())
+
+        
+       
+
+Concatenate two strings taken as input
+class degree:
+    def __init__(self):
+        pass
+    def num(self):
+        a=input("Enter the num ")
+        b=input("ENter the str")
+        print("COncatenation of a and b is ",a+b)
+s=degree()
+print(s.num())
+
+        
+       
+Medium:
+Convert a string of comma-separated numbers into a list of integers; 
+a=input("Enter the string number")
+if ',' in a:
+    print("LIst",a.split(','))
+    
+Check if a given input is a valid number (handle exceptions);
+class degree:
+    def __init__(self):
+        pass
+    def num(self):
+        try:
+           a=input("Enter the num ")
+           if '.'in a:
+               print("float")
+           else:
+              print("INT")
+        except ValueError:
+             print("not valid")
+        finally:
+             print("Thank you")
+s=degree()
+print(s.num())
+
+        
+       
+Swap two numbers without using a temp variable using arithmetic;
+class swap:
+    def __init__(self):
+        pass
+    def swap(self):
+        a=int(input("Enter the number "))
+        b=int(input("Enter the value of b"))
+        a=a+b
+        b=a-b
+        a=a-b
+        print("The value of a",a)
+        print("The value of b is",b)
+s=swap()
+print(s.swap())
+
+Convert a decimal number to binary/octal/hex using built-ins; 
+a=int(input("Enter the string number"))
+b=bin(a)
+print(b)
+for binary---bin
+for octal ---oct
+for hexa ===hex
+Parse a date string into day/month/year
+a = input("Enter the date (DD-MM-YYYY): ")
+parts = a.split('-')
+print(parts)
+
+Tough: 
+Implement your own int()-like function that parses a string to a number without using int();
+Convert a Roman numeral string to an integer; 
+Write a function that detects if a string represents a valid float (without try/except);
+Implement type coercion rules manually (e.g., what happens when you add int + float + str check);
+Parse a simple mathematical expression string and evaluate it (e.g., "3+5*2")
+
