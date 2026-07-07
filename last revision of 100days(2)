@@ -1,0 +1,114 @@
+Day 2 — Conditionals + Loops
+
+Easy: FizzBuzz (1-100);
+The task: Print numbers from 1 to 100, but with a twist:
+
+If the number is divisible by 3, print "Fizz" instead of the number
+If the number is divisible by 5, print "Buzz" instead of the number
+If the number is divisible by both 3 and 5 (i.e., by 15), print "FizzBuzz"
+Otherwise, just print the number itself
+for  i in range(1,101):
+    if i%3==0 and i%5==0:
+        print("FizzBuzz")
+    elif i%3==0:
+        print("Fizz")
+    elif i%5==0:
+        print("Buzz")
+    else:
+        print(i)
+
+
+Check if a number is prime; 
+num = int(input("Enter the number"))
+is_prime = True
+for i in range(2, num):
+    if num % i == 0:
+        is_prime = False
+        break
+if is_prime:
+    print("PRIME NUMBER")
+else:
+    print("NOT PRIME")
+
+Print a multiplication table; 
+num = int(input("Enter the number of tables you want "))
+for table in range(1, num+1):
+    for i in range(1, 11):
+        print(f"{table} X {i} = {table*i}")
+
+Sum of digits of a number;
+num=input("Enter the number")
+sum=0
+for  i in num:
+    sum+=int(i)
+print(sum)
+
+Check if a year is a leap year.
+year=int(input("Enter the year"))
+if year%4==0 and year%100!=0:
+    print("LEAP YEAR")
+elif year%400==0:
+    print(" LEAP YEAR")
+else:
+    print("NOt")
+
+Medium:
+Print a pattern (pyramid/triangle of stars);
+
+Find the largest of three numbers without using max();
+a=int(input("Enter the value of a"))
+b=int(input("Enter the value of b"))
+c=int(input("Enter the value of c"))
+if a>b and a>c:
+    print("a is greater")
+elif b>a and b>c:
+    print("B is greater")
+else:
+    print("C is greater")
+    
+
+Count vowels and consonants in a string using loops;
+alpha=input("Enter the string")
+count=0
+countv=0
+for i in range(len(alpha)):
+    if alpha[i] in "aeiouAEIOU":
+        count+=1
+    else:
+        countv+=1
+print("TOtal number of vowels",count)
+print("TOtal number of consonants",countv)
+
+Check if a number is an Armstrong number;
+num = input("Enter the number")
+total = 0
+power = len(num)
+for char in num:
+    digit = int(char)
+    total += digit ** power
+print(total)
+if total == int(num):
+    print("Armstrong number")
+else:
+    print("Not Armstrong")
+
+
+Find factorial using a loop (not recursion)
+num=int(input("Enter the number"))
+if num ==0 or num==1:
+        print("Factorial is one")
+elif num<0:
+    print("Factorial cannot be calculated")
+else:
+    fact=1
+    for i in range(2,num+1):
+         fact=fact*i
+    print("Factorail of the number is",fact)
+
+
+Tough:
+Print a diamond pattern;
+Find all prime numbers up to N using nested loops (Sieve logic without libraries);
+Check if a number is a perfect number;
+Simulate a simple ATM system using while loop + conditionals (deposit/withdraw/balance);
+Find the GCD and LCM of two numbers using loops only
