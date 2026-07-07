@@ -1,0 +1,46 @@
+Day 3 — Strings
+
+Easy: 
+
+Reverse a string; Check if a string is a palindrome;
+a=input("Enter the string")
+if a[::-1]==a:
+    print("PALINDROME")
+else:
+    print("NOt PAlindrome")
+
+Count occurrences of a character in a string; 
+a=input("Enter the string")
+count=0
+alpha=0
+n=0
+for i in range(len(a)):
+    if a[i].isalpha():
+        alpha+=1
+        print("ALPHABET")
+    elif a[i].isnumeric():
+        print("NUMERIC")
+        n+=1
+    else:
+        count+=1
+print(alpha)
+print(n)
+print(count)
+
+Convert a string to uppercase/lowercase without built-ins; 
+Check if two strings are anagrams
+
+Medium: 
+Remove all duplicate characters from a string;
+Find the first non-repeating character in a string;
+Count words in a sentence without using split(); 
+Check if a string contains only digits/alphabets; 
+Capitalize first letter of every word (title case) manually
+
+Tough: 
+Implement string compression (e.g., "aabcccccaaa" → "a2b1c5a3"); 
+Find the longest palindromic substring; 
+Check if one string is a rotation of another; 
+Implement a basic string pattern matching (find substring index without .find()); 
+Group anagrams from a list of strings
+
