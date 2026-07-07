@@ -127,6 +127,20 @@ print(parts)
 
 Tough: 
 Implement your own int()-like function that parses a string to a number without using int();
+a = input("Enter the num")
+number = 0
+for char in a:
+    digit = ord(char) - ord('0')
+    number = number * 10 + digit
+print(number)
+
+#this is extra code.
+a=input("ENter the number")
+if "."in a:
+    print("Float")
+elif a.isnumeric:
+    print("int")
+
 Convert a Roman numeral string to an integer; 
 Write a function that detects if a string represents a valid float (without try/except);
 Implement type coercion rules manually (e.g., what happens when you add int + float + str check);
