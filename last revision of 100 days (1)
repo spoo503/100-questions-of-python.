@@ -143,6 +143,68 @@ elif a.isnumeric:
 
 Convert a Roman numeral string to an integer; 
 Write a function that detects if a string represents a valid float (without try/except);
+class Solution:
+    def __init__(self):
+        pass
+    def string(self):
+        a=input("ENter the string")
+        dot_count=a.count(".")
+        without_dot=a.replace(".","")
+        if dot_count==1 and without_dot.isdigit():
+            print("Float")
+        elif  dot_count>1 and without_dot.isdigit():
+            print("int")
+        elif dot_count==0 and without_dot.isalpha:
+            print("ALPHABET")
+s=Solution()
+print(s.string())
+
 Implement type coercion rules manually (e.g., what happens when you add int + float + str check);
+class Solution:
+    def __init__(self):
+        pass
+    def value(self):
+        a=input("ENter the value of a ")
+        b=input("ENter the value of ab")
+                # FIX 1: convert a and b into real int/float BEFORE checking type
+        if a.isdigit():
+            a = int(a)
+        elif a.count(".")==1 and a.replace(".","").isdigit():
+            a = float(a)
+        
+        if b.isdigit():
+            b = int(b)
+        elif b.count(".")==1 and b.replace(".","").isdigit():
+            b = float(b)
+
+        type1=type(a)
+        type2=type(b)
+        print("Type of a is",type1)
+        print("Type of b is",type2)
+        if type1 ==type2:
+            print("SUm of the a anad bis ",a+b)
+        elif type1 ==int and type2==float:
+            print("sum of int and float result float",a+b)
+        elif type1 ==float and type2==int:
+            print("sum of int and float result float",a+b)
+        elif type1 or type2 is int and  type1 and type2 is str:
+            print("Cannot be calculated")
+        else:
+            print("Please enter the valid detials")
+s=Solution()
+print(s.value())
 Parse a simple mathematical expression string and evaluate it (e.g., "3+5*2")
+a=input("Enter the number")
+parts=(a.split("+"))
+tot=0
+for p in parts:
+    if "*" in p:
+        sub=p.split("*")
+        t=1
+        t*=int(sub[0])*int(sub[1])
+        tot+=t
+    else:
+        tot+=int(p)
+print(tot)
+
 
