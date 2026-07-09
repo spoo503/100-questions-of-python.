@@ -54,6 +54,19 @@ else:
 
 Medium:
 Print a pattern (pyramid/triangle of stars);
+#PYRAMID
+num = "1234"
+n = len(num)
+for i in range(1, n+1):
+    spaces = " " * (n - i)
+    stars = "*" * (2*i - 1)
+    print(spaces + stars)
+#TRIANGLE.
+num="1234"
+for i in range(1,len(num)):
+    print(i*"*")
+#len=4,1,4---1,3 so loop runs 3 times.
+#1,2,3=6 stars.
 
 Find the largest of three numbers without using max();
 a=int(input("Enter the value of a"))
@@ -108,7 +121,70 @@ else:
 
 Tough:
 Print a diamond pattern;
+num="1234"
+for i in range(1,len(num)+1):
+    space=" "*(len(num)-i)
+    p="*"*(2*i-1)
+    print(space+p)
+for i in range(len(num)-1,0,-1):
+    space=" "*(len(num)-i)
+    p="*"*(2*i-1)
+    print(space+p)
+#len=5,4-1=3 
+    
+
 Find all prime numbers up to N using nested loops (Sieve logic without libraries);
+n = int(input("Enter N: "))
+
+for i in range(2, n+1):          # candidate numbers
+    is_prime = True
+    for j in range(2, i):         # check divisors smaller than i
+        if i % j == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(i, "is prime")
+
+should range not include num?" — This isn't really about excluding num from the range.
+The real problem is different: that code should never be comparing against num at all in the inner check. Let me explain why.
+
 Check if a number is a perfect number;
+n=int(input("Enter the number"))
+sum=0
+for i in range(1,n):
+    if n%i==0:
+        sum+=i
+print(sum)
+if sum==n:
+    print("Perfect number")
+else:
+    print("NOT PERFECT NUMBER")
 Simulate a simple ATM system using while loop + conditionals (deposit/withdraw/balance);
+balance=int(input("ENter the balance amount"))
+print("1. Deposit")
+print("2. Check Balance")
+print("3. Withdraw")
+print("4. Exit")
+option = int(input("Enter your option: "))
+while(option!=4):
+    if option==1:
+        print("Enter the amount u want to deposite")
+        amount=int(input("Enter the amount"))
+        balance+=amount
+        print("BALANCE AMOUNT",balance)
+    elif option==2:
+        print("BALANCE AMOUNT IS",balance)
+    elif option==3:
+        print("ENter the amount u want to withdraw")
+        amount=int(input("Enter the amount"))
+        if balance<amount:
+            print("Insufficient Balance")
+        else:
+            balance-=amount
+            print("Balance amount",balance)
+    else:
+        print("Please enter valid option")
+print("Thank u visit again")
+    
+    
 Find the GCD and LCM of two numbers using loops only
