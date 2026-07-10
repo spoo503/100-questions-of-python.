@@ -28,20 +28,123 @@ print(n)
 print(count)
 
 Convert a string to uppercase/lowercase without built-ins; 
+a = input("Enter the string: ")
+for i in range(len(a)):
+    if 'A' <= a[i] <= 'Z':
+        order = chr(ord(a[i]) + 32)
+    else:
+        order = a[i]
+    print(order)
 
 Check if two strings are anagrams
+It prints None — because sort() doesn't give back the sorted list,
+it just modifies the original list and returns nothing.
+if u write if A.sort()==B.sort():
+a=input("Enter the string")
+b=input("Enter the another string")
+A=list(a)
+B=list(b)
+A.sort()
+B.sort()
+if A==B:
+    print("Anagrams")
+else:
+    print("NOT ANagrams")
 
 Medium: 
+
 Remove all duplicate characters from a string;
+a=input("Enter the string")
+b=set(a)
+print(b) # when no order is required.
+
 Find the first non-repeating character in a string;
+a = input("Enter the string")
+result = ""
+for ch in a:
+    if ch not in result:
+        result = result + ch
+print(result)
+
 Count words in a sentence without using split(); 
+    if ' ' not in a: #THIS CHECKS FOR WHOLE STRING AND ALWAYS TH EOUPTUT WILL BE 
+EITHER TRUE OR FALSE
+a = input("Enter the sentence")
+count = 1
+for i in range(len(a)):
+    if a[i] == ' ' and a[i-1] != ' ':
+        count += 1
+print(count)
+vWe are never counting the space as a word.
+We're only using the space as a signal:
+"a word just ended here, so bump the word counter up by one.
+" The +1 on the space line isn't adding the space to the count — it's adding the next word that the space reveals.
+
+
 Check if a string contains only digits/alphabets; 
+a=input("Enter the string ")
+alph=0
+dig=0
+for i in range(len(a)):
+    if a[i].isalpha():
+        alph+=1
+    elif a[i].isdigit():
+        dig+=1
+if alph==0:
+    print("Integers")
+elif dig==0:
+    print("Characters")
+else:
+    print("It is combination of char and int",alph,dig)
+
 Capitalize first letter of every word (title case) manually
+There's no character before it — there's no a[-1] in the "previous word" sense.
+But the first letter of a sentence should always be capitalized, regardless of what comes before it (since nothing does).
+a = input("Enter the string: ")
+for i in range(len(a)):
+    if 'A' <= a[i] <= 'Z':
+        order = chr(ord(a[i]) +32)
+    elif  'a' <= a[i] <= 'z':
+        order = chr(ord(a[i]) -32)
+    else:
+        order = a[i]
+    print(order)
+
 
 Tough: 
+
 Implement string compression (e.g., "aabcccccaaa" → "a2b1c5a3"); 
+
 Find the longest palindromic substring; 
+
 Check if one string is a rotation of another; 
+Why check len(a) == len(b) first?
+Think about what rotation actually means — you're just moving letters from front to back, nothing is added or removed. 
+So a rotation of a will always have the exact same length as a.
+Take a = "waterbottle", b = "erbottlewat" (rotated by 3). If you just search b in a, you're asking: does "erbottlewat" appear as a continuous stretch inside "waterbottle"? It doesn't — the letters wrap around from the end back to the beginning, so in the original string alone, it's broken into two separate pieces at opposite ends.
+By doubling the string (a+a), you recreate that "wrap-around" continuity:
+a+a = "waterbottle" + "waterbottle" = "waterbottlewaterbottle"
+Now the seam is "healed" — any rotation of a, no matter where you cut it, will always show up as one unbroken stretch somewhere inside a+a. That's the whole trick — doubling turns a circular problem into a straight-line search problem.
+a = input("Enter first string")
+b = input("Enter second string")
+if len(a) == len(b) and b in (a + a):
+    print("Rotation")
+else:
+    print("Not a rotation")
+#another 
+a = input("Enter first string")
+b = input("Enter second string")
+found = False
+if len(a) == len(b):
+    for i in range(len(a)):
+        rotated = a[i:] + a[:i]
+        if rotated == b:
+            found = True
+if found:
+    print("Rotation")
+else:
+    print("Not a rotation")
+
 Implement a basic string pattern matching (find substring index without .find()); 
 Group anagrams from a list of strings
 
