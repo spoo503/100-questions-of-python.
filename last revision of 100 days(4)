@@ -1,0 +1,47 @@
+Day 4 — Lists, Tuples, Sets, Dictionaries
+
+Easy: 
+Find the largest/smallest element in a list without max()/min();
+l=[12,34,56,7,8,90]
+Max=l[0]
+Min=l[0]
+for i in range(len(l)):
+    if l[i]>Max:
+        Max=l[i]
+    elif l[i]<Min:
+        Min=l[i]
+print(Max)
+print(Min)
+
+Remove duplicates from a list; 
+l = [1, 2, 3, 1, 2]
+i = 0
+while i < len(l):
+    j = i + 1
+    while j < len(l):
+        if l[i] == l[j]:
+            l.remove(l[j])
+        else:
+            j += 1
+    i += 1
+print(l)
+
+Count frequency of elements in a list using a dictionary; 
+
+Merge two dictionaries;
+Convert a list to a set and back
+
+Medium:
+Find the second largest number in a list;
+Find common elements between two lists using sets;
+Sort a dictionary by its values;
+Flatten a nested list (one level);
+Find all pairs in a list that sum to a target value
+
+Tough:
+Find the intersection and union of two lists without using set operations directly;
+Group a list of dictionaries by a key (e.g., group students by grade); 
+Implement your own dictionary using two lists (keys and values);
+Find the most frequent element in a list without using Counter; 
+Rotate a list left/right by K positions without slicing
+
