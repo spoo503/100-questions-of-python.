@@ -1,0 +1,6 @@
+Day 5 — Functions, Recursion, OOP basics, Exception Handling
+
+Easy: Write a function to check if a number is even/odd; Write a function with default arguments; Write a function using *args to sum any number of values; Create a simple class Student with name and marks attributes; Write a try/except block to handle division by zero
+Medium: Write a recursive function for factorial; Write a recursive function for Fibonacci; Create a class with a method that calculates area (for different shapes using inheritance); Write a function using **kwargs to build a dictionary; Handle multiple exceptions (ValueError, ZeroDivisionError) in one function
+Tough: Write a recursive function to solve Tower of Hanoi; Implement a class-based Stack (push, pop, peek) from scratch; Write a recursive function for binary search; Create a custom exception class and raise it conditionally; Implement memoization manually for a recursive Fibonacci (without functools.lru_cache)
+
