@@ -27,16 +27,112 @@ while i < len(l):
 print(l)
 
 Count frequency of elements in a list using a dictionary; 
+d={"Rice":1,
+   "Dal":45,
+    "channa":45
+    }
+D=list(d.values())
+print(D)
+D.sort()
+print(D)
+count=1
+for i in range(len(D)):
+    for j in range(i+1,len(D)):
+        if D[i]==D[j]:
+            print(D[i])
+            count+=1
+print(count)
+print("Frequency of dict",count)
 
 Merge two dictionaries;
+d={"Name":"S",
+   "ClASS":"MBBS",
+    "MObile":748,
+    "tab":"i-Phone"
+    }
+s={"Name":"Spoorthi",
+   "ClASS":"Btech",
+    "MObile":945,
+    "tab":"Samsung"
+    }
+print(d)
+print(s)
+merged={**d,**s}
+# so here what happens means same varaiable is considers as one and it avoids overwite.
+d={"name":"S",
+   "Class":"MBBS",
+    "MObile":748,
+    "tab":"i-Phone"
+    }
+s={"Name":"Spoorthi",
+   "ClASS":"Btech",
+    "contact":994,
+    "tab":"Samsung"
+    }
+print(d)
+print(s)
+merged={**d,**s}
+print(merged)
+output:{'name': 'S', 'Class': 'MBBS', 'MObile': 748, 'tab': 'i-Phone'}
+{'Name': 'Spoorthi', 'ClASS': 'Btech', 'contact': 994, 'tab': 'Samsung'}
+{'name': 'S', 'Class': 'MBBS', 'MObile': 748, 'tab': 'Samsung', 'Name': 'Spoorthi', 'ClASS': 'Btech', 'contact': 994}
+
+=== Code Execution Successful ===# here as keys are diffrent all are printed.
+Key thing to remember: 
+.update() always gives priority to the dictionary being passed in (s here) when keys match — the caller (d) is modified to reflect those new values.
+If you wanted to keep both people's data, you'd need a different structure, like a list of dictionaries or a dictionary of dictionaries:
+
 Convert a list to a set and back
+l=[1,2,3,4,5,7]
+print(set(l))
+print(l)
 
 Medium:
 Find the second largest number in a list;
+l=[12,34,56,108,90]
+l.sort()
+print(l[-2])
+
 Find common elements between two lists using sets;
+l1=[12,23,45,56,78,889]
+l2=[12,34,25,456,7]
+print(set(l1))
+print(set(l2))
+print(set(l1) & set(l2))
+
 Sort a dictionary by its values;
+d={"name" :5,
+   "cas" :12,
+   "c":123,
+   "d":945
+  ,"e":345}
+d.keys()
+print(d.keys())
+s=list(d.values())
+print(s)
+s.sort()
+print(s)
+
 Flatten a nested list (one level);
+nested = [[1, 2, 3], [4, 5], [6, 7, 8]]
+flat = []
+for sublist in nested:
+    for item in sublist:
+        flat.append(item)
+print(flat)
+# [1, 2, 3, 4, 5, 6, 7, 8]
 Find all pairs in a list that sum to a target value
+nums = [2, 4, 3, 5, 7, 8]
+target = 9
+pairs = []
+
+for i in range(len(nums)):
+    for j in range(i + 1, len(nums)):
+        if nums[i] + nums[j] == target:
+            pairs.append((nums[i], nums[j]))
+
+print(pairs)
+# [(2, 7), (4, 5)]
 
 Tough:
 Find the intersection and union of two lists without using set operations directly;
