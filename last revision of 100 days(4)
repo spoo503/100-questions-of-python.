@@ -136,7 +136,64 @@ print(pairs)
 
 Tough:
 Find the intersection and union of two lists without using set operations directly;
+l1=[1,2,3,4,5]
+l2=[6,7,8,9]
+common=0
+intersection=[]
+union=list(l1)
+for i in range(len(l1)):
+    for j in range(len(l2)):
+        if l1[i]==l2[j]:
+            common+=1
+            intersection.append(i)
+
+for j in l2:
+    if j not in union:    # add L2's elements to union only if not already there
+        union.append(j)
+
+print("The common elements are:", intersection)
+print("Number of common elements:", common)
+print("The union of two sets is:", union)
+
+
+
+    
+
 Group a list of dictionaries by a key (e.g., group students by grade); 
+class Solution:
+    def __init__(self,name,sub,marks,grade):
+        self.name=name
+        self.sub=sub
+        self.marks=marks
+        self.grade=grade
+    def group_of_class(self):
+        n=int(input("ENter the number of students"))
+        all_students=[]
+        for i in range(n):
+            name=input("ENter the name of the student")
+            sub=input("Enter the subject")
+            marks=int(input("Enter the marks of the sub"))
+            grade=input("Enter the grade of the sub")
+            students={"NAME":name,"SUB":sub,"MARKS":marks             ,"GRADE":grade}
+            all_students.append(students)   # add to the list instead of overwriting
+
+        # Now group all collected students by grade
+        grouped = {}
+        for students in all_students:
+            g = students["GRADE"]
+            if g not in grouped:
+                grouped[g] = []
+            grouped[g].append(students)
+
+        return grouped
+
+s = Solution("", "", 0, "")
+result = s.group_of_class()
+print(result)
+
+class Solution: doesn't inherit from anything (it's not class Solution(SomeOtherClass):). 
+There's no parent class above it, so there's nothing for super() to call — using it would either throw an error or be meaningless.
+
 Implement your own dictionary using two lists (keys and values);
 Find the most frequent element in a list without using Counter; 
 Rotate a list left/right by K positions without slicing
