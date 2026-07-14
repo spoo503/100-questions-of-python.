@@ -57,11 +57,6 @@ Write a comprehension that generates Pascal's triangle row for N;
 Extract all substrings of a string using nested slicing;
 Use comprehension with conditional expression to label numbers as "Fizz"/"Buzz"/number (compact FizzBuzz)
 
-Day 7 — Dictionaries Deep Dive
-
-Easy: Count frequency of each word in a sentence using a dictionary; Create a dictionary from two lists (keys, values) using zip(); Find the key with the maximum value in a dictionary; Check if a key exists in a dictionary; Merge two dictionaries into one
-Medium: Invert a dictionary (swap keys and values); Sort a dictionary by keys alphabetically; Find all keys that have a specific value; Count character frequency in a string using a dictionary; Create a dictionary of squares for numbers 1-10 using comprehension
-Tough: Group a list of words by their first letter into a dictionary of lists; Find the most common word in a paragraph without using Counter; Build a nested dictionary representing a simple student database (name → {marks, age}); Merge two dictionaries, summing values for common keys; Implement a simple word-frequency counter that ignores punctuation and case
 
 **Day 8 — Functions: *args, kwargs, Lambda, Map/Filter/Reduce
 
