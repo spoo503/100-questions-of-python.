@@ -114,8 +114,22 @@ for i in range(len(a)):
 Tough: 
 
 Implement string compression (e.g., "aabcccccaaa" → "a2b1c5a3"); 
+str=input("Enter the string")
+count=1
+i=1
+while(i<len(str)):
+    while(i<len(str) and str[i]==str[i-1]):
+        count+=1
+        i+=1
+    print(str[i-1],count,sep="",end="")
+    count=1
+    i+=1
+
 
 Find the longest palindromic substring; 
+Out of ALL the possible substrings you could pull from the given string, 
+find the ones that happen to be palindromes, and tell me which palindrome is the longest.
+
 
 Check if one string is a rotation of another; 
 Why check len(a) == len(b) first?
@@ -147,4 +161,21 @@ else:
 
 Implement a basic string pattern matching (find substring index without .find()); 
 Group anagrams from a list of strings
-
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+groups = {}
+for word in words:
+    signature = ''.join(sorted(word))  # sort letters, join back into a string
+    if signature in groups:
+        groups[signature].append(word)
+    else:
+        groups[signature] = [word]
+print(list(groups.values()))
+l1=["eat","tea","meat","team"]
+group={}
+for i in l1:
+    s=''.join(sorted(i)) # joins again
+    if s in group:
+        group[s].append(i)
+    else:
+        group[s]=[i]
+    print(list(group.values()))
