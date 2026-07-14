@@ -1,0 +1,116 @@
+Day 6 — List/String Slicing + Comprehensions
+
+Easy: 
+Reverse a list using slicing; 
+l=[1,2,3,4]
+print(l[::-1])
+
+Get the first 3 and last 3 elements of a list;
+l=[1,2,3,4,5,6]
+print(l[0:3])
+print(l[:2:-1])
+
+Create a list of squares (1-10) using list comprehension; 
+l = [4,2,3]
+result = [item**2 for item in l]
+print(result)
+
+Extract even numbers from a list using comprehension; 
+l=[2,34,5]
+result=[item%2==0 for item in l]
+print(result)
+
+Slice a string to get every 2nd character.
+l=["h","e","l","o"]
+print(l[::2])
+
+Medium:
+
+Use slicing to check if a string is a palindrome;
+l=["h","e","l","o"]
+print(l[::1])
+if l[::1] ==l[::-1]:
+    print("PAlindrome")
+else:
+    print("NOt Palindrome")
+
+Create a list of tuples (num, square) using comprehension;
+l = [1, 2]
+result = [(i, i**2) for i in l]
+print(result)
+
+Flatten a 2D list using nested list comprehension; 
+Filter words longer than 4 letters from a sentence using comprehension; 
+
+Reverse only the words in a sentence (not the letters) using slicing
+sentence = "HELLO HI HOW ARE YOU"
+words = sentence.split()  # turns sentence into a list of words first
+reversed_words = words[::-1]
+print(reversed_words)
+#l=["HELLO","HI","HOW","ARE","YOY"]
+print(l[::-1])
+
+Tough:
+Rotate a list by K positions using only slicing (no loops); 
+Use comprehension to find all pairs (i,j) from two lists where i+j equals a target;
+Write a comprehension that generates Pascal's triangle row for N; 
+Extract all substrings of a string using nested slicing;
+Use comprehension with conditional expression to label numbers as "Fizz"/"Buzz"/number (compact FizzBuzz)
+
+Day 7 — Dictionaries Deep Dive
+
+Easy: Count frequency of each word in a sentence using a dictionary; Create a dictionary from two lists (keys, values) using zip(); Find the key with the maximum value in a dictionary; Check if a key exists in a dictionary; Merge two dictionaries into one
+Medium: Invert a dictionary (swap keys and values); Sort a dictionary by keys alphabetically; Find all keys that have a specific value; Count character frequency in a string using a dictionary; Create a dictionary of squares for numbers 1-10 using comprehension
+Tough: Group a list of words by their first letter into a dictionary of lists; Find the most common word in a paragraph without using Counter; Build a nested dictionary representing a simple student database (name → {marks, age}); Merge two dictionaries, summing values for common keys; Implement a simple word-frequency counter that ignores punctuation and case
+
+**Day 8 — Functions: *args, kwargs, Lambda, Map/Filter/Reduce
+
+Easy: Write a function using *args to find the max of any number of inputs; Write a lambda function to square a number; Use map() to convert a list of strings to integers; Use filter() to get only even numbers from a list; Write a function with **kwargs that prints all key-value pairs passed
+Medium: Use map() with a lambda to double every element in a list; Use filter() with a lambda to get words longer than 5 letters; Write a function that accepts both *args and **kwargs and prints both; Sort a list of dictionaries by a specific key using sorted() with a lambda; Use reduce() (from functools) to find the product of a list
+Tough: Implement your own version of map() without using the built-in; Chain map() and filter() together to process a list in one line; Write a function that returns another function (closures) — e.g., a multiplier generator; Use reduce() to find the maximum value in a list without max(); Build a simple calculator using a dictionary of lambda functions mapped to operators (+, -, *, /)
+
+Day 9 — Exception Handling + File Handling
+
+Easy: Handle a ZeroDivisionError with try/except; Write code that catches multiple exception types separately; Create and write to a text file; Read a text file line by line; Use with open() to safely read a file
+Medium: Write a function that reads numbers from a file and returns their sum, handling invalid lines gracefully; Catch a FileNotFoundError when trying to open a missing file; Write user input to a file, appending instead of overwriting; Count the number of lines/words in a text file; Create a custom exception class and raise it when a condition fails (e.g., negative number)
+Tough: Build a simple contact book that saves/loads data to/from a file using exception handling for corrupted data; Write a function that retries an operation up to 3 times if it fails, using try/except in a loop; Parse a CSV-like text file manually (without the csv module) and handle malformed rows; Implement a logging system that writes errors to a file instead of printing them; Handle nested exceptions (an exception inside an except block) properly with proper cleanup using finally
+
+Day 10 — OOP: Inheritance, Polymorphism, Encapsulation
+
+Easy: Create a base class Animal and a child class Dog that inherits from it; Override a method from the parent class in the child class; Create a class with a private attribute (using _ or __ prefix); Add a method to a class that returns a formatted string about the object; Create two classes with a method of the same name (polymorphism) and call it on each
+Medium: Create a class hierarchy: Shape → Circle, Rectangle, each calculating their own area; Use super() to call the parent class's __init__ from a child class; Implement a BankAccount class with deposit/withdraw methods and private balance; Create a class that uses a property (@property decorator) to control access to an attribute; Write a class where multiple child classes override the same method differently, then loop through a list of them calling that method (real polymorphism example)
+Tough: Implement a simple Vehicle → Car, Bike hierarchy with a shared start_engine() method that behaves differently per subclass, plus a class-level counter tracking how many vehicles were created; Build a Shape abstract-style base class (using NotImplementedError in the base method) that forces child classes to implement area(); Implement operator overloading — make a Point class where + adds two points together (__add__ method); Create a class with both __str__ and __repr__ methods and explain when each is used; Design a simple library system with Book and Member classes where borrowing a book updates both objects' states correctly
+
+Send over your attempts whenever you're ready — same format as before, I'll trace and check each one.what about day11 tp day 15Decided to provide Python topics for days eleven through fifteenDecided to provide Python topics for days eleven through fifteenHere's Days 11-15, going a bit further into practical/intermediate territory:
+Day 11 — Iterators, Generators, Decorators (intro)
+
+Easy: Write a generator function that yields numbers from 1 to N; Create an iterator manually using iter() and next(); Write a generator that yields only even numbers up to N; Use a generator expression (like a comprehension but with ()) to sum squares of 1-10; Write a simple decorator that prints "Function started" before running a function
+Medium: Write a generator that yields Fibonacci numbers infinitely (no fixed limit); Create a custom iterator class using __iter__ and __next__; Write a decorator that measures how long a function takes to run; Use a generator to read a large file line by line without loading it all into memory; Write a decorator that only allows a function to run if a condition (e.g., user is "logged in" via a flag) is true
+Tough: Build a generator-based pipeline (e.g., one generator filters even numbers, another squares them, chained together); Implement your own version of range() as a custom iterator class; Write a decorator that caches function results (memoization) to avoid recomputing for the same input; Create a generator that yields prime numbers infinitely; Write a decorator that retries a function up to N times if it raises an exception, with a delay between attempts
+
+Day 12 — Regular Expressions (regex) Basics
+
+Easy: Check if a string contains only digits using re.match(); Find all numbers in a sentence using re.findall(); Validate if a string is a valid email format (basic pattern); Replace all spaces in a string with underscores using re.sub(); Check if a string starts with a capital letter using regex
+Medium: Extract all words starting with a capital letter from a paragraph; Validate a basic phone number format (10 digits); Split a sentence into words, ignoring punctuation, using regex; Find and count all vowels in a string using re.findall(); Check if a password meets criteria (min 8 chars, at least one digit, one uppercase) using regex
+Tough: Extract all valid dates (DD-MM-YYYY format) from a block of text; Write a regex to validate a strong password (uppercase, lowercase, digit, special character, min length) in one pattern; Parse a log file line to extract timestamp, log level, and message using groups; Remove all HTML tags from a string using regex; Validate an IP address format using regex
+
+Day 13 — Modules, datetime, os basics
+
+Easy: Import and use the math module to find square root and factorial; Get today's date using the datetime module; Print the current time; List all files in the current directory using os; Calculate the difference between two dates
+Medium: Format a date as "DD Month YYYY" (e.g., "13 July 2026") using datetime; Check if a given year is a leap year using the calendar module; Create a folder using os if it doesn't already exist; Find how many days are left until a specific future date; Write a function that returns the day of the week for any given date
+Tough: Build a simple age calculator that takes a birthdate and returns exact years, months, days; Write a script that organizes files in a folder by their extension (move .txt to one folder, .jpg to another) using os; Create a simple countdown timer to a specific date/event; Parse and convert between different date string formats (e.g., "2026-07-13" to "13/07/2026"); Calculate business days (excluding weekends) between two dates manually (no external library)
+
+Day 14 — Working with JSON + Basic APIs (requests)
+
+Easy: Convert a Python dictionary to a JSON string using json.dumps(); Convert a JSON string back to a dictionary using json.loads(); Save a dictionary to a .json file; Read data back from a .json file; Pretty-print a JSON object with indentation
+Medium: Write a function that updates a specific key in a JSON file and saves it back; Convert a list of dictionaries (like student records) to JSON and save to file; Make a basic GET request to a public API (like a joke API) using the requests library and print the response; Parse a nested JSON response and extract specific fields; Handle a JSON decode error gracefully with try/except
+Tough: Build a simple JSON-based "database" for a to-do list app (add, view, delete tasks, all persisted to a file); Fetch data from a public API (like weather or currency conversion) and display only relevant fields nicely formatted; Merge two JSON files into one, handling duplicate keys; Write a function that validates incoming JSON data against expected keys/types before processing; Build a simple caching system that saves API responses to a JSON file and reuses them if called again within a time limit
+
+Day 15 — Mini Project Day (combine everything so far)
+Pick ONE of these to build fully, using whatever combination of topics fits:
+
+A Contact Book — add/search/delete/update contacts, saved to a JSON file, with input validation using regex (phone/email) and exception handling
+A Simple Quiz App — reads questions from a file/dictionary, tracks score, uses functions and possibly OOP (a Quiz class)
+A Expense Tracker — add expenses with categories and dates, save to JSON, show a summary (total per category) using dictionaries
+A Library Management System (mini) — Book and Member classes (OOP), track borrowed books, save state to JSON file
+
