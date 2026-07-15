@@ -87,6 +87,8 @@ for char in text:
 
 print(freq)
 Create a dictionary of squares for numbers 1-10 using comprehension
+result={i:i**2 for i in range(1,11)}
+print(result)
 Tough:
 Group a list of words by their first letter into a dictionary of lists;
 Find the most common word in a paragraph without using Counter;
