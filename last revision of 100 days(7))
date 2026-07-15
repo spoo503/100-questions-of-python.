@@ -2,15 +2,90 @@ Day 7 — Dictionaries Deep Dive
 
 Easy:
 Count frequency of each word in a sentence using a dictionary; 
-Create a dictionary from two lists (keys, values) using zip();
-Find the key with the maximum value in a dictionary; 
-Check if a key exists in a dictionary;
+Book[word] = 1 means: create a box labeled hello, 
+and put the number 1 inside it. If that box didn't exist before, Python creates it right then. 
+If it already existed, this would erase whatever was in it and replace it with 1.
+book={}
+n=int(input("Enter the number of words u want"))
+for i in range(n):
+      word=input("Enter the word")
+      if word not in book:
+         book[word] = 1
+         print(f"{word} is new, count: 1")
+      else:
+         book[word] += 1
+         print(f"have I seen this before, {word}: {book[word]}")
+print(book)
+
+
+#Create a dictionary from two lists (keys, values) using zip()
+l1=["name","class","age"]
+l2=["sri","MBBS","20"]
+record=dict(zip(l1,l2))
+print(record)
+
+#Find the key with the maximum value in a dictionary; 
+record={"maths":39,"EE":31,"phy":28}
+M=record.values()
+print(max(M))
+print(max(record, key=record.get))
+record.get, finds that "maths" has the highest value (39), and gives you back the key "maths" — not the number.
+
+# Check if a key exists in a dictionary
+record = {"maths": 39, "EE": 31, "phy": 28}
+
+key = input("Enter subject to check: ")
+
+if key in record:
+    print(f"{key} exists in the dictionary")
+else:
+    print(f"{key} does not exist in the dictionary")
+
 Merge two dictionaries into one
+record={"maths":39,"EE":31,"phy":28}
+record1={"sci":98,"kannada":34,"hindi":2}
+record.update(record1)
+print(record)
+
 Medium:
 Invert a dictionary (swap keys and values);
 Sort a dictionary by keys alphabetically;
+d={"a":1,"b":2,"c":3}
+print(d)
+k=list(d.keys())
+print(d.keys())
+k.sort()
+sorted_dict = {}
+for key in k:
+    sorted_dict[key] = d[key]
+
+print(sorted_dict)
+
+
+
 Find all keys that have a specific value;
+#Find all keys that have a specific value;
+marks={"Alice":90,"Bob":85,"Charlie":90}
+target=90
+result=[]
+for key, value in marks.items():
+    if value == target:
+        result.append(value)
+        print(f"{key}:{value}")
+print(result)
+
+
 Count character frequency in a string using a dictionary;
+text = input("Enter the string: ")
+freq = {}
+
+for char in text:
+    if char not in freq:
+        freq[char] = 1
+    else:
+        freq[char] += 1
+
+print(freq)
 Create a dictionary of squares for numbers 1-10 using comprehension
 Tough:
 Group a list of words by their first letter into a dictionary of lists;
